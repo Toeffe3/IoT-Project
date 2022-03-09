@@ -2,17 +2,13 @@
  * Hub.cpp
  *
  * Created: 08-03-2022 15:35:26
- * Author : dense
- */ 
+ * Author : Victor
+ */
 
-#include <avr32/io.h>
+#include "header.h"
 
-
-int main(void)
-{
-    /* Replace with your application code */
-    while (1) 
-    {
-    }
+int main(void) { 
+  /* Replace with your application code */
+  while (1) {
+  }
 }
-
