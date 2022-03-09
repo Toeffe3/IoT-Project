@@ -1,5 +1,8 @@
 name: clang-format Code Formatter
-on: push
+on: 
+  pull_request:
+    branches:
+    - main
 jobs:
   lint:
     name: clang-format Code Formatter
