@@ -14,10 +14,11 @@ jobs:
           ref: ${{ github.head_ref }}
           fetch-depth: 2
 
-      - name: Install and run clang-format
-        run: |
-          npm install clang-format
-          clang-format-diff-10 -i -style=file
+      - name: Install clang-format
+        run: npm install clang-format
+
+      - name: Run clang format
+        run: clang-format-diff-10 -i -style=file */*.c*
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4.1.2
