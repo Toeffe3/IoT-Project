@@ -1,14 +1,15 @@
 /*
  * io.h
  *
- * Created: 09-03-2022 10:49:04
- *  Author: dense
  */
 
 #ifndef IO_H_
 #define IO_H_
 
+#define F_CPU 8000000UL
+
 #include <avr/io.h>
+
 
 #define SENSOR PORTA
 #define DEVICE PORTA

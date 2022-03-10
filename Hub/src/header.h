@@ -1,8 +1,6 @@
 /*
  * header.h
  *
- * Created: 09-03-2022 11:25:28
- *  Author: dense
  */
 
 #ifndef HEADER_H_
