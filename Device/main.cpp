@@ -6,8 +6,8 @@
 #include "header.h"
 
 void main (void) {
-    //Setup
+  // Setup
 
-    //Loop
-    while (1) {}
+  // Loop
+  while (1) {}
 }
