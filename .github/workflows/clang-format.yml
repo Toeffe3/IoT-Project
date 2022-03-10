@@ -16,8 +16,8 @@ jobs:
 
       - name: Install and run clang-format
         run: |
-          apt-get install clang-format
-          git-clang-format --style="file" HEAD^
+          npm install clang-format
+          clang-format-diff-10 -i --style=file
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4.1.2
