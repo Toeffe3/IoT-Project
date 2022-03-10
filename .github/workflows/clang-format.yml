@@ -13,7 +13,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
-          fetch-depth: 2
 
       - uses: purduesigbots/clang-format-action@1
         # use one of clang-format's supported styles or leave this out to use the style in your .clang-format file
