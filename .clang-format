@@ -1,0 +1,36 @@
+﻿---
+BasedOnStyle: LLVM
+AlignAfterOpenBracket: Align
+AlignConsecutiveMacros: 'true'
+AlignConsecutiveAssignments: 'true'
+AlignConsecutiveDeclarations: 'true'
+AlignEscapedNewlines: Right
+AlignOperands: 'true'
+AlignTrailingComments: 'true'
+AllowShortBlocksOnASingleLine: 'true'
+AllowShortFunctionsOnASingleLine: All
+DerivePointerAlignment: 'true'
+FixNamespaceComments: 'true'
+IncludeBlocks: Merge
+IndentCaseLabels: 'true'
+IndentWrappedFunctionNames: 'false'
+Language: Cpp
+PenaltyBreakAssignment: '1'
+PenaltyBreakBeforeFirstCallParameter: '1'
+PenaltyBreakComment: '1'
+PenaltyBreakFirstLessLess: '1'
+PenaltyBreakString: '1'
+PenaltyBreakTemplateDeclaration: '1'
+PenaltyExcessCharacter: '1'
+PenaltyReturnTypeOnItsOwnLine: '1'
+PointerAlignment: Middle
+ReflowComments: 'true'
+SpaceBeforeParens: Always
+SpaceBeforeRangeBasedForLoopColon: 'true'
+SpaceInEmptyParentheses: 'true'
+SpacesBeforeTrailingComments: '1'
+Standard: Auto
+TabWidth: '4'
+UseTab: Always
+
+...
