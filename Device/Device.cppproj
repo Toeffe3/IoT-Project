@@ -53,6 +53,9 @@
     <Compile Include="main.cpp">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\header.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\io.h">
       <SubType>compile</SubType>
     </Compile>
