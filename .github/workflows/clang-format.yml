@@ -13,7 +13,8 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-      - uses: purduesigbots/clang-format-action@1
+      - name: Run clang-format
+        uses: purduesigbots/clang-format-action@1.0.2
         # use one of clang-format's supported styles or leave this out to use the style in your .clang-format file
         with:
           style: file
