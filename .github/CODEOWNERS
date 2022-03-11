@@ -1,0 +1,7 @@
+# Catch all
+*       @Toeffe3
+
+# All should own .cpp .h
+*.cpp   @Toeffe3 @sylle100 @MarcusRJ96 @Luhning
+*.h     @Toeffe3 @sylle100 @MarcusRJ96 @Luhning
+
