@@ -7,10 +7,7 @@
 
 #include "header.h"
 
-int main(void)
-{
-    /* Replace with your application code */
-    while (1)
-    {
-    }
+int main (void) {
+  /* Replace with your application code */
+  while (1) {}
 }
