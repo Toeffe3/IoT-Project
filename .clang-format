@@ -1,7 +1,6 @@
 ﻿---
 BasedOnStyle: LLVM
 AlignAfterOpenBracket: Align
-AlignConsecutiveMacros: 'true'
 AlignConsecutiveAssignments: 'true'
 AlignConsecutiveDeclarations: 'true'
 AlignEscapedNewlines: Right
@@ -20,7 +19,6 @@ PenaltyBreakBeforeFirstCallParameter: '1'
 PenaltyBreakComment: '1'
 PenaltyBreakFirstLessLess: '1'
 PenaltyBreakString: '1'
-PenaltyBreakTemplateDeclaration: '1'
 PenaltyExcessCharacter: '1'
 PenaltyReturnTypeOnItsOwnLine: '1'
 PointerAlignment: Middle
