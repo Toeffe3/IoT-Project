@@ -167,6 +167,12 @@
     <Compile Include="src\io.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\rtc.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\rtc.h">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />
