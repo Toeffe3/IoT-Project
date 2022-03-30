@@ -1,0 +1,21 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP NE555DR
+D Single Precision Timer
+K
+F http://www.ti.com/lit/ds/symlink/ne555.pdf
+$ENDCMP
+#
+$CMP AT32UC3B164-AUT
+D AT32UC3B164-AUT, 32 bit AVR32 Microcontroller 60MHz 64 kB Flash, 16 kB RAM, USB I2C 48-Pin TQFP
+K
+F https://componentsearchengine.com/Datasheets/1/AT32UC3B164-AUT.pdf
+$ENDCMP
+#
+$CMP ATTINY167-XUR
+D 8-bit Microcontrollers - MCU AVR 16KB FL 512B EE 512B RAM 16MHz Ind-G
+K
+F https://ms.componentsearchengine.com/Datasheets/1/ATTINY167-XUR.pdf
+$ENDCMP
+#
+#End Doc Library
