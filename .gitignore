@@ -33,11 +33,15 @@
 
 # IDE
 .vs/*
-
 */Debug/*
 
 # Github Actions
 node_modules/*
 package-lock.json
 package.json
-KiCad/Device/Device-backups/Device-2022-03-30_103354.zip
+
+# Kicad
+KiCad/Device/Device-backups/*.zip
+KiCad/*/sym-lib-table
+
+# Other
