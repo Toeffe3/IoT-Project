@@ -978,6 +978,7 @@
     )
   )
 
+
   (junction (at 118.11 99.06) (diameter 0) (color 0 0 0 0)
     (uuid 03e9e03a-2387-4b16-a205-527141853fea)
   )
@@ -1410,7 +1411,7 @@
   (symbol (lib_id "Switch:SW_DIP_x01") (at 160.02 30.48 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 1f9cef0e-84ac-4eda-84fc-9f00d1d3d7b1)
-    (property "Reference" "SW?" (id 0) (at 160.02 22.86 0))
+    (property "Reference" "SW3" (id 0) (at 160.02 22.86 0))
     (property "Value" "SW_DIP_x01" (id 1) (at 160.02 25.4 0))
     (property "Footprint" "" (id 2) (at 160.02 30.48 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -1425,7 +1426,7 @@
   (symbol (lib_id "Device:LED") (at 204.47 97.79 180) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 2543488b-3564-4a07-8bac-d5d9882c70ff)
-    (property "Reference" "D?" (id 0) (at 198.755 92.075 0)
+    (property "Reference" "D2" (id 0) (at 198.755 92.075 0)
       (effects (font (size 1.27 1.27)) (justify right))
     )
     (property "Value" "GrønLED" (id 1) (at 198.755 94.615 0)
@@ -1462,7 +1463,7 @@
   (symbol (lib_id "power:GND") (at 105.41 99.06 270) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 2f18d0ed-287a-40e1-8d53-20e0b4160484)
-    (property "Reference" "#PWR?" (id 0) (at 99.06 99.06 0)
+    (property "Reference" "#PWR0123" (id 0) (at 99.06 99.06 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (id 1) (at 101.6 99.0599 90)
@@ -1480,7 +1481,7 @@
   (symbol (lib_id "Device:R") (at 158.75 102.87 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 330e4a4e-1686-411b-941a-e77769eb093d)
-    (property "Reference" "R?" (id 0) (at 161.29 101.5999 0)
+    (property "Reference" "R6" (id 0) (at 161.29 101.5999 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1k" (id 1) (at 161.29 104.1399 0)
@@ -1569,7 +1570,7 @@
   (symbol (lib_id "power:GND") (at 158.75 106.68 0) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 4a27a9f5-4020-4f2a-a146-7d6090273db9)
-    (property "Reference" "#PWR?" (id 0) (at 158.75 113.03 0)
+    (property "Reference" "#PWR0121" (id 0) (at 158.75 113.03 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "GND" (id 1) (at 156.21 110.49 0)
@@ -1587,7 +1588,7 @@
   (symbol (lib_id "Device:R") (at 118.11 104.14 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid 57e99af3-a41a-446e-b28a-0272c5c10ec2)
-    (property "Reference" "R?" (id 0) (at 120.65 102.8699 0)
+    (property "Reference" "R5" (id 0) (at 120.65 102.8699 0)
       (effects (font (size 1.27 1.27)) (justify left))
     )
     (property "Value" "1k" (id 1) (at 120.65 105.4099 0)
@@ -1676,7 +1677,7 @@
   (symbol (lib_id "power:+5V") (at 118.11 107.95 180) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid 7a30d29d-a709-4147-90ef-8a1f600bf705)
-    (property "Reference" "#PWR?" (id 0) (at 118.11 104.14 0)
+    (property "Reference" "#PWR0122" (id 0) (at 118.11 104.14 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (id 1) (at 115.57 111.76 0)
@@ -1817,7 +1818,7 @@
   (symbol (lib_id "Device:R") (at 214.63 97.79 90) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid a2014450-1b0f-4962-a973-f42e00681deb)
-    (property "Reference" "R?" (id 0) (at 214.63 91.44 90))
+    (property "Reference" "R7" (id 0) (at 214.63 91.44 90))
     (property "Value" "R" (id 1) (at 214.63 93.98 90))
     (property "Footprint" "" (id 2) (at 214.63 99.568 90)
       (effects (font (size 1.27 1.27)) hide)
@@ -1883,7 +1884,7 @@
   (symbol (lib_id "Switch:SW_MEC_5G") (at 149.86 99.06 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid bb081121-b10a-47df-8559-7a1d3f99d968)
-    (property "Reference" "SW?" (id 0) (at 149.86 91.44 0))
+    (property "Reference" "SW2" (id 0) (at 149.86 91.44 0))
     (property "Value" "Button01" (id 1) (at 149.86 93.98 0))
     (property "Footprint" "Button_Switch_SMD:SW_MEC_5GSH9" (id 2) (at 149.86 93.98 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -1951,7 +1952,7 @@
   (symbol (lib_id "Switch:SW_MEC_5G") (at 110.49 99.06 0) (unit 1)
     (in_bom yes) (on_board yes) (fields_autoplaced)
     (uuid cd4f78c6-1905-45bc-8353-13fa5b012b26)
-    (property "Reference" "SW?" (id 0) (at 110.49 91.44 0))
+    (property "Reference" "SW1" (id 0) (at 110.49 91.44 0))
     (property "Value" "Reset" (id 1) (at 110.49 93.98 0))
     (property "Footprint" "Button_Switch_SMD:SW_MEC_5GSH9" (id 2) (at 110.49 93.98 0)
       (effects (font (size 1.27 1.27)) hide)
@@ -2091,7 +2092,7 @@
   (symbol (lib_id "power:+5V") (at 144.78 99.06 90) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid f572accc-c719-48ce-a6b9-1254ff3d0e9d)
-    (property "Reference" "#PWR?" (id 0) (at 148.59 99.06 0)
+    (property "Reference" "#PWR0124" (id 0) (at 148.59 99.06 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (id 1) (at 137.16 99.06 90)
@@ -2165,7 +2166,7 @@
   (symbol (lib_id "power:+5V") (at 201.93 97.79 90) (unit 1)
     (in_bom yes) (on_board yes)
     (uuid fea08acc-7035-4e5b-a922-5743506308d1)
-    (property "Reference" "#PWR?" (id 0) (at 205.74 97.79 0)
+    (property "Reference" "#PWR0120" (id 0) (at 205.74 97.79 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Value" "+5V" (id 1) (at 194.31 97.79 90)
@@ -2242,41 +2243,41 @@
     (path "/92325a49-a243-42dd-8200-86da24c16ea6"
       (reference "#PWR0119") (unit 1) (value "+5V") (footprint "")
     )
-    (path "/2f18d0ed-287a-40e1-8d53-20e0b4160484"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+    (path "/fea08acc-7035-4e5b-a922-5743506308d1"
+      (reference "#PWR0120") (unit 1) (value "+5V") (footprint "")
     )
     (path "/4a27a9f5-4020-4f2a-a146-7d6090273db9"
-      (reference "#PWR?") (unit 1) (value "GND") (footprint "")
+      (reference "#PWR0121") (unit 1) (value "GND") (footprint "")
     )
     (path "/7a30d29d-a709-4147-90ef-8a1f600bf705"
-      (reference "#PWR?") (unit 1) (value "+5V") (footprint "")
+      (reference "#PWR0122") (unit 1) (value "+5V") (footprint "")
+    )
+    (path "/2f18d0ed-287a-40e1-8d53-20e0b4160484"
+      (reference "#PWR0123") (unit 1) (value "GND") (footprint "")
     )
     (path "/f572accc-c719-48ce-a6b9-1254ff3d0e9d"
-      (reference "#PWR?") (unit 1) (value "+5V") (footprint "")
-    )
-    (path "/fea08acc-7035-4e5b-a922-5743506308d1"
-      (reference "#PWR?") (unit 1) (value "+5V") (footprint "")
+      (reference "#PWR0124") (unit 1) (value "+5V") (footprint "")
     )
     (path "/c3859b88-ee1c-4daa-9fe4-63386a16086c"
-      (reference "C1") (unit 1) (value "1uF") (footprint "")
+      (reference "C1") (unit 1) (value "1uF") (footprint "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm")
     )
     (path "/649d19fd-cb36-4c8b-b96a-635864303db2"
-      (reference "C2") (unit 1) (value "20pF") (footprint "")
+      (reference "C2") (unit 1) (value "20pF") (footprint "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm")
     )
     (path "/7d94699e-7c95-4848-8c16-b3aa311edd29"
-      (reference "C3") (unit 1) (value "20pF") (footprint "")
+      (reference "C3") (unit 1) (value "20pF") (footprint "Capacitor_THT:C_Disc_D5.0mm_W2.5mm_P5.00mm")
     )
     (path "/7611e2c8-7c51-45ab-a61a-212ad250d6ba"
-      (reference "D1") (unit 1) (value "RødLED") (footprint "")
+      (reference "D1") (unit 1) (value "RødLED") (footprint "LED_THT:LED_D3.0mm_FlatTop")
     )
     (path "/2543488b-3564-4a07-8bac-d5d9882c70ff"
-      (reference "D?") (unit 1) (value "GrønLED") (footprint "")
+      (reference "D2") (unit 1) (value "GrønLED") (footprint "LED_THT:LED_D3.0mm_FlatTop")
     )
     (path "/ed8a7f02-cf05-41d0-97b4-4388ef205e73"
       (reference "IC1") (unit 1) (value "ATTINY167-XUR") (footprint "victorkicad:SOIC127P1034X264-20N")
     )
     (path "/a340ffec-ed73-4437-8fbf-7434d84e9c5c"
-      (reference "J1") (unit 1) (value "Mikrofon") (footprint "")
+      (reference "J1") (unit 1) (value "Mikrofon") (footprint "Connector_Phoenix_MC_HighVoltage:PhoenixContact_MCV_1,5_2-G-5.08_1x02_P5.08mm_Vertical")
     )
     (path "/077e27cc-b774-4fc3-be0f-1a8a82f9f441"
       (reference "J2") (unit 1) (value "Lysføler") (footprint "")
@@ -2288,40 +2289,40 @@
       (reference "J4") (unit 1) (value "Fugtføler") (footprint "")
     )
     (path "/9dde5f18-d33a-482b-aed4-9f855bdb6d54"
-      (reference "J5") (unit 1) (value "VCC") (footprint "")
+      (reference "J5") (unit 1) (value "VCC") (footprint "Connector_Phoenix_MC_HighVoltage:PhoenixContact_MCV_1,5_2-G-5.08_1x02_P5.08mm_Vertical")
     )
     (path "/f959907b-1cef-4760-b043-4260a660a2ae"
       (reference "J6") (unit 1) (value "ESP8266(wifi)") (footprint "")
     )
     (path "/de92152a-3f95-470e-8a68-519c1291418b"
-      (reference "R1") (unit 1) (value "10k") (footprint "")
+      (reference "R1") (unit 1) (value "10k") (footprint "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal")
     )
     (path "/d8200a86-aa75-47a3-ad2a-7f4c9c999a6f"
-      (reference "R2") (unit 1) (value "2.2k") (footprint "")
+      (reference "R2") (unit 1) (value "2.2k") (footprint "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal")
     )
     (path "/fd863afb-816b-4205-b430-34a1463e0b1e"
-      (reference "R3") (unit 1) (value "10k") (footprint "")
+      (reference "R3") (unit 1) (value "10k") (footprint "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal")
     )
     (path "/83b62012-b8ad-4a46-8b52-85c03aeb73ba"
-      (reference "R4") (unit 1) (value "100k") (footprint "")
-    )
-    (path "/330e4a4e-1686-411b-941a-e77769eb093d"
-      (reference "R?") (unit 1) (value "1k") (footprint "")
+      (reference "R4") (unit 1) (value "100k") (footprint "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal")
     )
     (path "/57e99af3-a41a-446e-b28a-0272c5c10ec2"
-      (reference "R?") (unit 1) (value "1k") (footprint "")
+      (reference "R5") (unit 1) (value "1k") (footprint "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal")
+    )
+    (path "/330e4a4e-1686-411b-941a-e77769eb093d"
+      (reference "R6") (unit 1) (value "1k") (footprint "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal")
     )
     (path "/a2014450-1b0f-4962-a973-f42e00681deb"
-      (reference "R?") (unit 1) (value "R") (footprint "")
-    )
-    (path "/1f9cef0e-84ac-4eda-84fc-9f00d1d3d7b1"
-      (reference "SW?") (unit 1) (value "SW_DIP_x01") (footprint "")
-    )
-    (path "/bb081121-b10a-47df-8559-7a1d3f99d968"
-      (reference "SW?") (unit 1) (value "Button01") (footprint "Button_Switch_SMD:SW_MEC_5GSH9")
+      (reference "R7") (unit 1) (value "R") (footprint "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal")
     )
     (path "/cd4f78c6-1905-45bc-8353-13fa5b012b26"
-      (reference "SW?") (unit 1) (value "Reset") (footprint "Button_Switch_SMD:SW_MEC_5GSH9")
+      (reference "SW1") (unit 1) (value "Reset") (footprint "Button_Switch_SMD:SW_MEC_5GSH9")
+    )
+    (path "/bb081121-b10a-47df-8559-7a1d3f99d968"
+      (reference "SW2") (unit 1) (value "Button01") (footprint "Button_Switch_SMD:SW_MEC_5GSH9")
+    )
+    (path "/1f9cef0e-84ac-4eda-84fc-9f00d1d3d7b1"
+      (reference "SW3") (unit 1) (value "SW_DIP_x01") (footprint "")
     )
     (path "/5df0654c-8d6d-486d-b5f4-0be0de8af6ef"
       (reference "Y1") (unit 1) (value "Crystal") (footprint "")
