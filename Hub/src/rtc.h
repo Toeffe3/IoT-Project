@@ -5,7 +5,7 @@
  *  Author: Tobia
  */ 
 
-
+// Defines --------------------------------------------------------
 #ifndef RTC_H_
 #define RTC_H_
 
@@ -20,9 +20,13 @@
 
 #endif /* RTC_H_ */
 
+// Functions --------------------------------------------------------
 
+// Init-function; rtc_init(souceclock, prescaler, top_val)
 void rtc_init(bool, uint8_t, uint32_t);
 
+// Endable interrupts from RTC; rtc_endable_interrupt()
 void rtc_endable_interrupt(void);
 
+// Disable interrupts from RTC; rtc_disable_interrupt()
 void rtc_disable_interrupt(void);
