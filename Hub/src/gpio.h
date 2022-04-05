@@ -16,6 +16,14 @@
 #define ALL_ODER_DISABLE = 0x0000;
 #define ALL_OVR_1 = 0xFFFF;
 #define ALL_OVR_1 = 0x0000;
+#define ALL_PUER_UP_ALL = 0xFFFF;
+#define ALL_PUER_OFF = 0x0000;
+#define ALL_GFER_OFF = 0x0000;
+#define ALL_Interrupts_OFF = 0x0000;
+#define IMR0_0 = 0x0000;
+#define IMR1_0 = 0x0000;
+
+
 
 
 
