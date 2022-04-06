@@ -161,6 +161,12 @@
     <Compile Include="main.cpp">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\gpio.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\gpio.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\header.h">
       <SubType>compile</SubType>
     </Compile>
