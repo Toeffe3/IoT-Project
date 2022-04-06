@@ -8,7 +8,7 @@
 #include "rtc.h"
 
 
-void rtc_init(bool souceclock, int prescaler, int top_val){
+void rtc_init(bool souceclock, uint32_t prescaler, uint32_t top_val){
 		// Source clock
 		// = 1 << EN; // RTC on 1 or off 0
 		AVR32_RTC_CTRL = OSC_32KHZ << AVR32_RTC_CTRL_EN; // Use 32 KHz oscillator 1 or use RC oscillator 0
@@ -20,11 +20,11 @@ void rtc_init(bool souceclock, int prescaler, int top_val){
 		rtc_endable_interrupt(); // Enable RTC interrupt 1
 }
 
-void rtc_disable_interrupt(void){
+void rtc_disable_interrupt(){
 		AVR32_RTC_IDR = DISABLE_RTC_INTERRUPT << AVR32_RTC_IER_TOPI // Disable RTC interrupt 1
 }
 
-void rtc_endable_interrupt(void){
+void rtc_endable_interrupt(){
 	AVR32_RTC_IER = ENDABLE_RTC_INTERRUPT << AVR32_RTC_IER_TOPI; // Enable RTC interrupt 1	
 }
 

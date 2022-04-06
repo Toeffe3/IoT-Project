@@ -5,6 +5,7 @@
  *  Author: Rainbow Dash
  */ 
 
+// Define --------------------------------------------------------
 
 #ifndef GPIO_H_
 #define GPIO_H_
@@ -20,11 +21,21 @@
 #define ALL_PUER_OFF = 0x0000;
 #define ALL_GFER_OFF = 0x0000;
 #define ALL_Interrupts_OFF = 0x0000;
+#define ALL_Interrupts_ON = 0xFFFF;
 #define IMR0_0 = 0x0000;
 #define IMR1_0 = 0x0000;
 
 
-
-
-
 #endif /* GPIO_H_ */
+
+
+// Function ---------------------------------------------------
+// Setting up GPIO
+void gpio_init (void);
+
+// Turn off GPIO interrups
+void gpio_interrupt_off(void);
+
+// Turn off GPIO interrups
+void gpio_interrupt_on(void);
+

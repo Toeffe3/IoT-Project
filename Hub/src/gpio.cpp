@@ -26,3 +26,11 @@ void gpio_init(){
 	AVR32_GPIO_IMR1 = IMR1_0				// IMR0 is bit 0, and IMR1 is bit 1; 00 -> Pin Change, 01 -> Rising Edge; 10 -> Falling Edge
 	
 }
+
+void gpio_interrupt_off(){
+		AVR32_GPIO_IER = ALL_Interrupts_OFF;	// Setting If Interrupts is on for the pin
+}
+
+void gpio_interrupt_on(){
+		AVR32_GPIO_IER = ALL_Interrupts_ON;	// Setting If Interrupts is on for the pin
+}
