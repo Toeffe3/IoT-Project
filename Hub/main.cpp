@@ -4,9 +4,9 @@
  *
  */
 
-#include "header.h"
-#include "tc.h"
+
 #include "gpio.h"
+#include "header.h"
 #include "rtc.h"
 #include "usb.h"
 
@@ -27,6 +27,7 @@ void init ( ) {
 	usb_init();
 	gpio_init ();
 	rtc_init (OSC_32KHZ, PRESCALER, TOP_VAL); }
+
 
 // Mayby AVR32_RTC_ISR
 ISR (AVR32_RTC_IRQ) { ticks++; }

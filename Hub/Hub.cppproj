@@ -179,6 +179,18 @@
     <Compile Include="src\rtc.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\tc.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\tc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\usb.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\usb.h">
+      <SubType>compile</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="src\" />
