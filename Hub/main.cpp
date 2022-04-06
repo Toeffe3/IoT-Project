@@ -4,7 +4,6 @@
  *
  */
 
-
 #include "gpio.h"
 #include "header.h"
 #include "rtc.h"
@@ -22,12 +21,12 @@ int main (void) {
   while (1) {}
 }
 
-void init ( ) { 
-	tc_init();
-	usb_init();
-	gpio_init ();
-	rtc_init (OSC_32KHZ, PRESCALER, TOP_VAL); }
-
+void init ( ) {
+  tc_init ( );
+  usb_init ( );
+  gpio_init ( );
+  rtc_init (OSC_32KHZ, PRESCALER, TOP_VAL);
+}
 
 // Mayby AVR32_RTC_ISR
 ISR (AVR32_RTC_IRQ) { ticks++; }
