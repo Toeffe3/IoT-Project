@@ -13,7 +13,7 @@ FixNamespaceComments: 'true'
 IncludeBlocks: Merge
 IndentCaseLabels: 'true'
 IndentWrappedFunctionNames: 'false'
-Language: C
+Language: Cpp
 PenaltyBreakAssignment: '1'
 PenaltyBreakBeforeFirstCallParameter: '1'
 PenaltyBreakComment: '1'
