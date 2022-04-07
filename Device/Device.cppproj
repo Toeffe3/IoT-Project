@@ -53,27 +53,59 @@
       </ToolNumber>
       <ToolName xmlns="">Custom Programming Tool</ToolName>
     </custom>
-    <CustomProgrammingToolCommand>avrdude.exe -e -v -P usb -p t167 -c usbasp -C $(ProjectDir)Debug\avrdude.conf flash:w:"$(ProjectDir)Debug\$(TargetName).hex":i</CustomProgrammingToolCommand>
+    <CustomProgrammingToolCommand>avrdude.exe -e -v -P usb -p t167 -c usbasp -C $(OutputDirectory)\avrdude.conf flash:w:"$(OutputDirectory)\$(OutputFileName).hex":i</CustomProgrammingToolCommand>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcccpp.linker.libraries.LibrarySearchPaths>
+    <ListValues>
+      <Value>D:\Programs\Atmel\Studio\7.0\packs\atmel\ATtiny_DFP\1.8.332\include\avr</Value>
+    </ListValues>
+  </avrgcccpp.linker.libraries.LibrarySearchPaths>
+</AvrGccCpp>
     </ToolchainSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <ToolchainSettings>
+      <AvrGccCpp>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.common.outputfiles.usersignatures>False</avrgcc.common.outputfiles.usersignatures>
+  <avrgcc.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcc.compiler.optimization.level>
+  <avrgcccpp.compiler.optimization.level>Optimize debugging experience (-Og)</avrgcccpp.compiler.optimization.level>
+  <avrgcccpp.linker.libraries.LibrarySearchPaths>
+    <ListValues>
+      <Value>D:\Programs\Atmel\Studio\7.0\packs\atmel\ATtiny_DFP\1.8.332\include\avr</Value>
+    </ListValues>
+  </avrgcccpp.linker.libraries.LibrarySearchPaths>
+</AvrGccCpp>
     </ToolchainSettings>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Upload' ">
+    <OutputPath>bin\Upload\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
-    <Compile Include="src\wifi.cpp">
+    <Compile Include="src\USI.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="main.cpp">
+    <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\header.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\io.h">
+    <Compile Include="src\uio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\USI.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

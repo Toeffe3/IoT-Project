@@ -3,11 +3,11 @@
  *
  */
 
-#ifndef IO_H_
-#define IO_H_
+#ifndef UIO_H_
+#define UIO_H_
 
 
-#include <avr/io.h>
+#include <avr/iotn167.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
@@ -17,10 +17,7 @@
 
 //TWI
 #define DDR_USI             DDRB
-#define PORT_USI            PORTB
-#define PIN_USI             PINB
-#define PORT_USI_SDA        PINB0
-#define PORT_USI_SCL        PINB2
+#define PORT_USI			PORTB
 #define PIN_USI_SDA         PINB0
 #define PIN_USI_SCL         PINB2
 #define TWI_FREQ 1000000L
@@ -46,4 +43,4 @@
 
 
 
-#endif /* IO_H_ */
+#endif /* UIO_H_ */
