@@ -7,7 +7,7 @@
 
 void main (void) {
   // Setup
-	
+
   // Loop
   while (1) {}
 }
