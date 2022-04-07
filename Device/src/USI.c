@@ -4,6 +4,7 @@
  * Created: 30-03-2022 10:34:49
  *  Author: sylle
  */ 
+#include "header.h"
 #include "USI.h"
 
 void twi_init(){

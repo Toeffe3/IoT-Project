@@ -2,12 +2,16 @@
  * Device.cpp
  *
  */
-
 #include "src/header.h"
+#include "src/USI.h"
 
-void main (void) {
-  // Setup
-
+int main (void) {
+  // Setup 
+  twi_init();
   // Loop
-  while (1) {}
+  while (1) {
+    twi_transfer('a');
+    _delay_ms(10);
+
+  }
 }

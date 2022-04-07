@@ -16,7 +16,6 @@
  * Created: 30-03-2022 10:34:49
  *  Author: sylle
  */ 
-#include "header.h"
 
 #define USISR_TRANSFER_8_BIT 		0b11110000 | (0x00<<USICNT0)
 #define USISR_TRANSFER_1_BIT 		0b11110000 | (0x0E<<USICNT0)

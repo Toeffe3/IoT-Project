@@ -6,9 +6,6 @@
 #ifndef UIO_H_
 #define UIO_H_
 
-
-#include <avr/iotn167.h>
-#include <util/delay.h>
 #include <avr/interrupt.h>
 
 #define SENSOR PORTA
