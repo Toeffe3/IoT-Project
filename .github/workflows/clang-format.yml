@@ -18,7 +18,7 @@ jobs:
         run: npm install clang-format
 
       - name: Run clang format
-        run: clang-format-10 -i -style=file */*.c*
+        run: clang-format-10 -i -style=file */*.c
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4.1.2
