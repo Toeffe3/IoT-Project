@@ -346,7 +346,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "Device.kicad_pro",
+    "filename": "Superconnecter.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -363,8 +363,8 @@
         "name": "Default",
         "pcb_color": "rgba(0, 0, 0, 0.000)",
         "schematic_color": "rgba(0, 0, 0, 0.000)",
-        "track_width": 1.0,
-        "via_diameter": 1.6,
+        "track_width": 0.5,
+        "via_diameter": 2.0,
         "via_drill": 0.8,
         "wire_width": 6.0
       }
@@ -425,7 +425,7 @@
   },
   "sheets": [
     [
-      "9538e4ed-27e6-4c37-b989-9859dc0d49e8",
+      "e63e39d7-6ac0-4ffd-8aa3-1841a4541b55",
       ""
     ]
   ],

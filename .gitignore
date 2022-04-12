@@ -43,7 +43,7 @@ package-lock.json
 package.json
 
 # Kicad
-KiCad/Device/Device-backups/*.zip
+KiCad/*/*backups/*.zip
 KiCad/*/sym-lib-table
 
 # Other
