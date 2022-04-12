@@ -25,5 +25,7 @@ void init_MIC();
 void init_FUG();
 
 /* Temp */
-init_temp();
+void init_temp();
+uint16_t temp_celcius();
+
 #endif /* SENSOR_H_ */

@@ -68,3 +68,9 @@ void init_temp(){
 	
 	ADCSRA |= (1 << ADSC); // Start ADC
 }
+
+uint16_t temp_celcius(){
+	uint16_t data = ADC;
+	return data - 273
+	
+}
