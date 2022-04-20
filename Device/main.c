@@ -2,15 +2,19 @@
  * Device.cpp
  *
  */
-#include "src/USI.h"
+#include "src/Sensor.h"
+#include "src/debug.h"
 #include "src/header.h"
 
 int main (void) {
   // Setup
-  twi_init ( );
+  init_debug ( );
+  init_IR ( );
   // Loop
   while (1) {
-	twi_transfer ('a');
-	_delay_ms (10);
+	if (read_ir ( )) {
+	  led_on ( );
+	} else
+	  led_off ( );
   }
 }
