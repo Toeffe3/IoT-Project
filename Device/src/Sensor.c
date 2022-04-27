@@ -36,7 +36,10 @@ void init_LDR ( ) {
 
   ADCSRA |= (1 << ADSC); // Start ADC
 }
-
+uint8_t read_LDR(){
+	return(PINA & (1<<PINLDR)) !=0;
+	};
+	
 void init_MIC ( ) {
 
   DDRA &= ~(1 << PINMIC); // Set microphone as input

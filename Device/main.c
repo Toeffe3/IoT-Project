@@ -9,10 +9,10 @@
 int main (void) {
   // Setup
   init_debug ( );
-  init_IR ( );
+  init_LDR ( );
   // Loop
   while (1) {
-	if (read_ir ( )) {
+	if (read_LDR ( )) {
 	  led_on ( );
 	} else
 	  led_off ( );
