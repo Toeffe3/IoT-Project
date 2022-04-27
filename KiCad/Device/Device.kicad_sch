@@ -2020,10 +2020,10 @@
     (property "Datasheet" "http://www.apem.com/int/index.php?controller=attachment&id_attachment=1371" (id 3) (at 33.02 177.8 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid a138f45d-3717-49ad-929a-8d1fcc4d3e37))
-    (pin "1" (uuid a138f45d-3717-49ad-929a-8d1fcc4d3e37))
-    (pin "2" (uuid c75b1544-83f1-4f20-a565-eb8d81487c56))
-    (pin "2" (uuid c75b1544-83f1-4f20-a565-eb8d81487c56))
+    (pin "1" (uuid a138f45d-3717-49ad-929a-8d1fcc4d3e38))
+    (pin "1" (uuid a138f45d-3717-49ad-929a-8d1fcc4d3e38))
+    (pin "2" (uuid c75b1544-83f1-4f20-a565-eb8d81487c57))
+    (pin "2" (uuid c75b1544-83f1-4f20-a565-eb8d81487c57))
   )
 
   (symbol (lib_id "Device:R") (at 175.26 114.3 180) (unit 1)
@@ -2673,10 +2673,10 @@
     (property "Datasheet" "http://www.apem.com/int/index.php?controller=attachment&id_attachment=1371" (id 3) (at 72.39 172.72 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (pin "1" (uuid 055c7979-2b46-4728-8402-d5ea7eae7766))
-    (pin "1" (uuid 055c7979-2b46-4728-8402-d5ea7eae7766))
-    (pin "2" (uuid 1d5b02b2-13ef-4897-8d0a-42e98f6be347))
-    (pin "2" (uuid 1d5b02b2-13ef-4897-8d0a-42e98f6be347))
+    (pin "1" (uuid 055c7979-2b46-4728-8402-d5ea7eae7767))
+    (pin "1" (uuid 055c7979-2b46-4728-8402-d5ea7eae7767))
+    (pin "2" (uuid 1d5b02b2-13ef-4897-8d0a-42e98f6be348))
+    (pin "2" (uuid 1d5b02b2-13ef-4897-8d0a-42e98f6be348))
   )
 
   (symbol (lib_id "power:GND") (at 149.86 115.57 0) (unit 1)
@@ -3263,7 +3263,7 @@
       (reference "J7") (unit 1) (value "Conn_02x06_Odd_Even") (footprint "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical")
     )
     (path "/de92152a-3f95-470e-8a68-519c1291418b"
-      (reference "R1") (unit 1) (value "1k") (footprint "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal")
+      (reference "R1") (unit 1) (value "2k") (footprint "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal")
     )
     (path "/d8200a86-aa75-47a3-ad2a-7f4c9c999a6f"
       (reference "R2") (unit 1) (value "2.2k") (footprint "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal")
