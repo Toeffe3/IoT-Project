@@ -13,7 +13,7 @@ void init_OPTIC ( ) {
 
   ADMUX &= ~((1 << REFS1) & (1 << REFS0));				// Use 2.56V AREF
   ADMUX |= (0 << MUX2) | (1 << MUX1) | (1 << MUX0);		// A3
-  ADMUX |= (1 << ADLAR);								// Left adjust result
+  ADMUX |= (0 << ADLAR);								// Right adjust result
   ADCSRA |= (0 << ADPS2) | (1 << ADPS1) | (0 << ADPS0); // Prescale 4
   ADCSRA |= (1 << ADEN) | (1 << ADATE) | (1 << ADIE);   // Enable ADC, ADC auto
 														// trigger and ADC
@@ -27,8 +27,8 @@ void init_LDR ( ) {
   DDRA &= ~(1 << PINLDR); // Set LDR as input
 
   ADMUX &= ~((1 << REFS1) & (1 << REFS0)); // Use 2.56V AREF
-  ADMUX |= (1 << MUX3) | (0 << MUX2) | (0 << MUX1) | (1 << MUX0); // A6
-  ADMUX |= (1 << ADLAR);								// left adjust result
+  ADMUX |= (0 << MUX3) | (1 << MUX2) | (1 << MUX1) | (0 << MUX0); // A6
+  ADMUX |= (0 << ADLAR);								// Right adjust result
   ADCSRA |= (0 << ADPS2) | (0 << ADPS1) | (0 << ADPS0); // Prescale 2
   ADCSRA |= (1 << ADEN) | (1 << ADATE) | (1 << ADIE);   // Enable ADC, ADC auto
 														// trigger and ADC
@@ -36,17 +36,17 @@ void init_LDR ( ) {
 
   ADCSRA |= (1 << ADSC); // Start ADC
 }
-uint8_t read_LDR(){
-	return(PINA & (1<<PINLDR)) !=0;
-	};
+uint16_t read_LDR(){
+	return ADC;
+	}
 	
 void init_MIC ( ) {
 
   DDRA &= ~(1 << PINMIC); // Set microphone as input
 
-  ADMUX &= ~((1 << REFS1) & (1 << REFS0)); // Use 2.56V AREF
-  ADMUX |= (1 << MUX3) | (0 << MUX2) | (1 << MUX1) | (0 << MUX0); // A7
-  ADMUX |= (1 << ADLAR);								// left adjust result
+  ADMUX &= ~((0 << REFS1) & (1 << REFS0)); // Use 1.1V AREF
+  ADMUX |= (0 << MUX3) | (1 << MUX2) | (1 << MUX1) | (1 << MUX0); // A7
+  ADMUX |= (0 << ADLAR);								// Right adjust result
   ADCSRA |= (0 << ADPS2) | (0 << ADPS1) | (0 << ADPS0); // Prescale 2
   ADCSRA |= (1 << ADEN) | (1 << ADATE) | (1 << ADIE);   // Enable ADC, ADC auto
 														// trigger and ADC
@@ -54,7 +54,9 @@ void init_MIC ( ) {
 
   ADCSRA |= (1 << ADSC); // Start ADC
 }
-
+ uint16_t read_mic(){
+	 return ADC;
+ }
 void init_FUG ( ) {
   DDRA &= ~(1 << PINFUG); // Set moisture sennsor as input
 }
@@ -63,7 +65,7 @@ void init_temp ( ) {
 
   ADMUX &= ~((01 << REFS1) & (1 << REFS0)); // Use 1.1V AREF
   ADMUX |= (1 << MUX3) | (0 << MUX2) | (1 << MUX1) | (1 << MUX0); // Temp
-  ADMUX |= (1 << ADLAR);								// left adjust result
+  ADMUX |= (0 << ADLAR);								// Right adjust result
   ADCSRA |= (0 << ADPS2) | (0 << ADPS1) | (0 << ADPS0); // Prescale 2
   ADCSRA |= (1 << ADEN) | (1 << ADATE) | (1 << ADIE);   // Enable ADC, ADC auto
 														// trigger and ADC

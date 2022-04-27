@@ -15,11 +15,12 @@ void init_OPTIC ( );
 /* LDR */
 #define PINLDR PINA6
 void init_LDR ( );
-uint8_t read_LDR();
+uint16_t read_LDR();
 
 /* MIC */
 #define PINMIC PINA7
 void init_MIC ( );
+uint16_t read_mic();
 
 /* Fugt */
 #define PINFUG PINA0

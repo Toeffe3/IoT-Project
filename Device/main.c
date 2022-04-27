@@ -9,10 +9,10 @@
 int main (void) {
   // Setup
   init_debug ( );
-  init_LDR ( );
+  init_MIC();
   // Loop
   while (1) {
-	if (read_LDR ( )) {
+	if (read_mic ( ) > 80) {
 	  led_on ( );
 	} else
 	  led_off ( );
