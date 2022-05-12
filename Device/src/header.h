@@ -21,5 +21,6 @@
 #include "LED.h"
 #include "USI.h"
 #include "sensor.h"
+#include "ticks.h"
 
 #endif /* HEADER_H_ */
