@@ -8,6 +8,8 @@
 #ifndef TICKS_H_
 #define TICKS_H_
 
+#include "header.h"
+
 extern uint32_t ticks;
 
 void ticks_init (void);
