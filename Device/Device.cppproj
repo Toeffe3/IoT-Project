@@ -150,16 +150,16 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="src\debug.c">
+    <Compile Include="src\LED.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\debug.h">
+    <Compile Include="src\LED.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Sensor.c">
+    <Compile Include="src\sensor.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Sensor.h">
+    <Compile Include="src\sensor.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\USI.c">
@@ -169,9 +169,6 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\header.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\uio.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\USI.h">

@@ -2,19 +2,17 @@
  * Device.cpp
  *
  */
-#include "src/Sensor.h"
-#include "src/debug.h"
 #include "src/header.h"
 
 int main (void) {
   // Setup
-  init_debug ( );
-  init_MIC();
+  LED_init ( );
+  MIC_init ( );
   // Loop
   while (1) {
-	if (read_mic ( ) > 80) {
-	  led_on ( );
-	} else
-	  led_off ( );
+	if (MIC_read ( ) > 80)
+	  LED_on ( );
+	else
+	  LED_off ( );
   }
 }
