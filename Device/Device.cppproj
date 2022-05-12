@@ -162,6 +162,12 @@
     <Compile Include="src\sensor.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\ticks.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\ticks.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\USI.c">
       <SubType>compile</SubType>
     </Compile>
