@@ -6,12 +6,10 @@
 
 int main (void) {
   // Setup
+  ticks_init();
   LED_init ( );
   // Loop
   while (1) {
-	if (ticks > 100) {
-	  ticks = 0;
-	  LED_toggle ( );
-	}
-  }
+	SSD_write(1);
+}
 }

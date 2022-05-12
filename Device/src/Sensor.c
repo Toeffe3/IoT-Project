@@ -120,3 +120,15 @@ void CNY_init (void) {
 }
 
 uint16_t CNY_read (void) { return ADC; }
+
+void BUT_init(){
+	DDR_BUT &= ~(1 << PIN_BUT);
+	PCICR |= (1 << PCIE1);
+	PCMSK1 |= (1 << PCINT9);
+}
+bool tryk = 0;
+ISR(PCINT1_vect){
+	tryk = (BUT & (1 << PIN_BUT)) != 0;
+	
+}
+

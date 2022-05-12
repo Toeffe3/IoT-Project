@@ -156,6 +156,12 @@
     <Compile Include="src\LED.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\Output.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\Output.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\sensor.c">
       <SubType>compile</SubType>
     </Compile>
