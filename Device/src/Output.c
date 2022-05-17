@@ -6,12 +6,11 @@
  */ 
 #include "Output.h"
 void SSD_init(){
-	DDR_SSD |= (PINS_SSD << PIN_SSD);
+	DDR_SSD &= ~PINS_SSD;
+	MCUCR &= ~(1<<PUD);
 	
 }
 void SSD_write(uint8_t num){
-	DDR_SSD = 0;
-	MCUCR &= ~(1<<PUD);
 	switch(num){
 		case 0x0:
 		PORT_SSD = SSD_0;
