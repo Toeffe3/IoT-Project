@@ -7,7 +7,7 @@
 #include "Output.h"
 void SSD_init(){
 	DDR_SSD &= ~PINS_SSD;
-	MCUCR &= ~(1<<PUD);
+	//MCUCR &= ~(1<<PUD);
 	
 }
 void SSD_write(uint8_t num){
