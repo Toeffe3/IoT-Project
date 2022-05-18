@@ -9,7 +9,7 @@
 
 uint32_t ticks = 0;
 
-ticks_init (void) {
+void ticks_init (void) {
   TCCR0A |= (1 << OCR01) | (1 << OCR00) | (1 << WGM01); // CTC, HIGH on match
   TCCR0B = (0 << CS02) | (0 << CS01) | (1 << CS00);		// Prescale 1
   TIMSK0 |= (1 << OCIE0A) | (1 << TOIE0);				// Enable interupts

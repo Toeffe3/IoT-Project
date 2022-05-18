@@ -19,7 +19,8 @@
 #include <util/delay.h>
 //
 #include "LED.h"
-#include "USI.h"
+#include "Output.h"
+#include "com.h"
 #include "sensor.h"
 #include "ticks.h"
 

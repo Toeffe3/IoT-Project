@@ -53,7 +53,7 @@
       </ToolNumber>
       <ToolName xmlns="">Custom Programming Tool</ToolName>
     </custom>
-    <CustomProgrammingToolCommand>avrdude -e -v -P usb -p t167 -c usbasp -C $(OutputDirectory)\avrdude.conf -U flash:w:"$(OutputDirectory)\$(OutputFileName).hex":i</CustomProgrammingToolCommand>
+    <CustomProgrammingToolCommand>avrdude -e -v -P usb -p t167 -c usbasp -C $(OutputDirectory)\avrdude.conf -F -U flash:w:"$(OutputDirectory)\$(OutputFileName).hex":i</CustomProgrammingToolCommand>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <ToolchainSettings>
@@ -150,6 +150,12 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="src\com.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\com.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\LED.c">
       <SubType>compile</SubType>
     </Compile>
@@ -174,16 +180,10 @@
     <Compile Include="src\ticks.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\USI.c">
-      <SubType>compile</SubType>
-    </Compile>
     <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\header.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\USI.h">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

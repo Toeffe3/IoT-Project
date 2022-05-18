@@ -47,8 +47,7 @@
 #define DDR_BUT DDRB
 #define PIN_BUT PINB1
 #define BUT PINB
-extern bool  tryk;
-
+extern bool tryk;
 
 void	 IRD_init (void);
 bool	 IRD_read (void);
@@ -63,6 +62,6 @@ void	 MIC_init (void);
 uint16_t MIC_read (void);
 void	 CNY_init (void);
 uint16_t CNY_read (void);
-void BUT_init();
+void	 BUT_init ( );
 
 #endif /* SENSOR_H_ */
