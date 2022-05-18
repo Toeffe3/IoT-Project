@@ -13,9 +13,11 @@ int main (void) {
   // Loop
   uint8_t i = 0;
   while (1) {
+	//com_send_char('a' + i++);
+	uint16_t data = LDR_read();
+	com_send_num(data);
+	_delay_ms(1000);
 	  
-	  if (LDR_read() > 512) LED_off();
-	  else LED_on();
 	// PORTA = 0xff;
 	//_delay_ms(1000);
 	// PORTA = 0x00;

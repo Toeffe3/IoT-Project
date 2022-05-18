@@ -27,7 +27,7 @@
 #define COM_ONE 0b10
 #define COM_SIGNAL 0b11
 
-#define COM_SPEED 10
+#define COM_SPEED 20
 
 void	com_init ( );
 void	com_send_signal (void);
