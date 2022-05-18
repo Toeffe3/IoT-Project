@@ -37,5 +37,6 @@ void	com_get_string (char* str);
 void	com_send_bit (bool b);
 void	com_send_char (char c);
 void	com_send_string (const char* str);
+void	com_send_num (uint16_t num);
 
 #endif /* COM_H_ */

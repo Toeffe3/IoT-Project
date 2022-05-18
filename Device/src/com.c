@@ -131,3 +131,7 @@ void private_com_send_string (const char* str, bool passthrough) {
 void com_send_bit (bool b) { private_com_send_bit (b, false); }
 void com_send_char (char c) { private_com_send_char (c, false); }
 void com_send_string (const char* str) { private_com_send_string (str, false); }
+void com_send_num (uint16_t num) {
+  char buf[6];
+  private_com_send_string (utoa (num, buf, 10), false);
+}
