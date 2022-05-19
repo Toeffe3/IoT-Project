@@ -1,37 +1,36 @@
 /*****************************************************************************
-* University of Southern Denmark
-* Embedded C Programming (ECP)
-*
-* MODULENAME.: leds.c
-*
-* PROJECT....: ECP
-*
-* DESCRIPTION: See module specification file (.h-file).
-*
-* Change Log:
-******************************************************************************
-* Date    Id    Change
-* YYMMDD
-* --------------------
-* 050128  KA    Module created.
-*
-*****************************************************************************/
+ * University of Southern Denmark
+ * Embedded C Programming (ECP)
+ *
+ * MODULENAME.: leds.c
+ *
+ * PROJECT....: ECP
+ *
+ * DESCRIPTION: See module specification file (.h-file).
+ *
+ * Change Log:
+ ******************************************************************************
+ * Date    Id    Change
+ * YYMMDD
+ * --------------------
+ * 050128  KA    Module created.
+ *
+ *****************************************************************************/
 
 /***************************** Include files *******************************/
-#include <stdint.h>
-#include "tm4c123gh6pm.h"
 #include "FreeRTOS.h"
 #include "Task.h"
+#include "emp_type.h"
 #include "queue.h"
 #include "semphr.h"
-#include "emp_type.h"
+#include "tm4c123gh6pm.h"
+#include <stdint.h>
 //#include "glob_def.h"
 //#include "binary.h"
 #include "status_led.h"
 
-
 /*****************************    Defines    *******************************/
-#define PF0		0		// Bit 0
+#define PF0 0 // Bit 0
 
 /*****************************   Constants   *******************************/
 
@@ -39,12 +38,12 @@
 
 /*****************************   Functions   *******************************/
 
-void status_led_init(void)
+void status_led_init (void)
 /*****************************************************************************
-*   Input    : 	-
-*   Output   : 	-
-*   Function : 	
-*****************************************************************************/
+ *   Input    : 	-
+ *   Output   : 	-
+ *   Function :
+ *****************************************************************************/
 {
   INT8S dummy;
   // Enable the GPIO port that is used for the on-board LED.
@@ -57,23 +56,15 @@ void status_led_init(void)
   GPIO_PORTD_DEN_R |= 0x40;
 }
 
+void status_led_task (void *pvParameters) {
 
-void status_led_task(void *pvParameters)
-{
-	
-	status_led_init();
+  status_led_init ( );
 
-	while(1)
-	{
-		// Toggle status led
-	    GPIO_PORTD_DATA_R ^= 0x40;
-		vTaskDelay(500 / portTICK_RATE_MS); // wait 500 ms.
-	}
+  while (1) {
+	// Toggle status led
+	GPIO_PORTD_DATA_R ^= 0x40;
+	vTaskDelay (500 / portTICK_RATE_MS); // wait 500 ms.
+  }
 }
 
-
 /****************************** End Of Module *******************************/
-
-
-
-
