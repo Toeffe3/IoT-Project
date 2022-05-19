@@ -33,10 +33,15 @@
 
 # IDE
 .vs/*
-
 */Debug/*
 
 # Github Actions
 node_modules/*
 package-lock.json
 package.json
+
+# Kicad
+KiCad/*/*backups/*.zip
+KiCad/*/sym-lib-table
+
+# Other
