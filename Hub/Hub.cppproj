@@ -157,8 +157,11 @@
       </Avr32GccCpp>
     </ToolchainSettings>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Upload' ">
+    <OutputPath>bin\Upload\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
-    <Compile Include="main.cpp">
+    <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\header.h">

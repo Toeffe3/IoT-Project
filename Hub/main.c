@@ -4,9 +4,9 @@
  *
  */
 
-#include "header.h"
+#include "src/header.h"
 
-void main (void) {
+int main (void) {
   // Setup
 
   // Loop
