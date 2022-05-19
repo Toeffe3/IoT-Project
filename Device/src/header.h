@@ -18,11 +18,13 @@
 #include <avr/io.h>
 //#include <avr/sleep.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include <util/delay.h>
 
 // Custom functions
 #include "LED.h"
-#include "USI.h"
+#include "Output.h"
+#include "com.h"
 #include "sensor.h"
 #include "ticks.h"
 

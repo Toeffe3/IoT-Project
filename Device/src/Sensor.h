@@ -33,7 +33,7 @@
 // Microphone
 #define PORT_MIC PORTA
 #define DDR_MIC DDRA
-#define PIN_MIC PINA7
+#define PIN_MIC PINA6
 #define MIC PINA
 
 // CNY70 Optical sensor
@@ -42,10 +42,17 @@
 #define PIN_CNY PINA3
 #define CNY PINA
 
+// Button D1
+#define PORT_BUT PORTB
+#define DDR_BUT DDRB
+#define PIN_BUT PINB1
+#define BUT PINB
+extern bool tryk;
+
 void	 IRD_init (void);
 bool	 IRD_read (void);
 void	 LDR_init (void);
-uint16_t read_LDR (void);
+uint16_t LDR_read (void);
 uint16_t HUM_wait_for_high (void);
 uint16_t HUM_wait_for_low (void);
 bool	 DHT_get_one_bit (void);
@@ -55,5 +62,7 @@ void	 MIC_init (void);
 uint16_t MIC_read (void);
 void	 CNY_init (void);
 uint16_t CNY_read (void);
-
+void	 BUT_init ( );
+void TEMP_init(void);
+float TEMP_read(void);
 #endif /* SENSOR_H_ */
