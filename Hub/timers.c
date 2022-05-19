@@ -1004,7 +1004,7 @@ BaseType_t xTimerIsTimerActive (TimerHandle_t xTimer) {
 
   return xReturn;
 } /*lint !e818 Can't be pointer to const due to the typedef. */
-  /*-----------------------------------------------------------*/
+/*-----------------------------------------------------------*/
 
 void* pvTimerGetTimerID (const TimerHandle_t xTimer) {
   Timer_t* const pxTimer = xTimer;

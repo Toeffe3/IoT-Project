@@ -267,14 +267,14 @@ xStreamBufferGenericCreate (size_t xBufferSizeBytes, size_t xTriggerLevelBytes,
    * expected. */
   if (xBufferSizeBytes < (xBufferSizeBytes + 1 + sizeof (StreamBuffer_t))) {
 	xBufferSizeBytes++;
-	pucAllocatedMemory = (uint8_t*)pvPortMalloc (xBufferSizeBytes +
-												 sizeof (StreamBuffer_t)); /*lint
-																			  !e9079
-																			  malloc()
-																			  only
-																			  returns
-																			  void*.
-																			*/
+	pucAllocatedMemory =
+		(uint8_t*)pvPortMalloc (xBufferSizeBytes + sizeof (StreamBuffer_t)); /*lint
+																				!e9079
+																				malloc()
+																				only
+																				returns
+																				void*.
+																			  */
   } else {
 	pucAllocatedMemory = NULL;
   }
@@ -283,26 +283,26 @@ xStreamBufferGenericCreate (size_t xBufferSizeBytes, size_t xTriggerLevelBytes,
 	prvInitialiseNewStreamBuffer (
 		(StreamBuffer_t*)pucAllocatedMemory,
 		/* Structure at the start of the allocated memory. */
-			/*lint !e9087 Safe cast as allocated memory is aligned. */ /*lint
-																		  !e826
-																		  Area
-																		  is not
-																		  too
-																		  small
-																		  and
-																		  alignment
-																		  is
-																		  guaranteed
-																		  provided
-																		  malloc()
-																		  behaves
-																		  as
-																		  expected
-																		  and
-																		  returns
-																		  aligned
-																		  buffer.
-																		*/
+		/*lint !e9087 Safe cast as allocated memory is aligned. */ /*lint
+																	  !e826
+																	  Area
+																	  is not
+																	  too
+																	  small
+																	  and
+																	  alignment
+																	  is
+																	  guaranteed
+																	  provided
+																	  malloc()
+																	  behaves
+																	  as
+																	  expected
+																	  and
+																	  returns
+																	  aligned
+																	  buffer.
+																	*/
 			pucAllocatedMemory + sizeof (StreamBuffer_t),
 		/* Storage area follows. */ /*lint !e9016 Indexing past structure valid
 									   for uint8_t pointer, also storage area
@@ -1063,7 +1063,7 @@ static size_t prvWriteBytesToBuffer (StreamBuffer_t* const pxStreamBuffer,
 	configASSERT ((xCount - xFirstLength) <= pxStreamBuffer->xLength);
 	(void)memcpy ((void*)pxStreamBuffer->pucBuffer, (const void*)&(pucData[xFirstLength]),
 				  xCount - xFirstLength); /*lint !e9087 memcpy() requires void
-											 *. */
+										   *. */
   } else {
 	mtCOVERAGE_TEST_MARKER ( );
   }
@@ -1104,7 +1104,7 @@ static size_t prvReadBytesFromBuffer (StreamBuffer_t* pxStreamBuffer,
 	/* ...then read the remaining bytes from the start of the buffer. */
 	(void)memcpy ((void*)&(pucData[xFirstLength]), (void*)(pxStreamBuffer->pucBuffer),
 				  xCount - xFirstLength); /*lint !e9087 memcpy() requires void
-											 *. */
+										   *. */
   } else {
 	mtCOVERAGE_TEST_MARKER ( );
   }
