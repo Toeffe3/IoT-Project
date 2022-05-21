@@ -6,6 +6,9 @@
  */
 
 #include "sensor.h"
+#include <stdbool.h>
+
+bool btn;
 
 void IRD_init (void) {
   // Configure IR movement detector as input
@@ -56,7 +59,6 @@ bool DHT_get_one_bit (void) {
 void HUM_init (void) {
   DDR_HUM |= (1 << PIN_HUM);   // OUTPUT
   PORT_HUM &= ~(1 << PIN_HUM); // LOW
-  
 }
 
 uint8_t HUM_get (uint16_t *temperature, uint16_t *humidity) {
@@ -97,11 +99,10 @@ uint8_t HUM_get (uint16_t *temperature, uint16_t *humidity) {
 void MIC_init (void) {
   // Configure microphone as input
   DDR_MIC &= ~(1 << PIN_MIC);
-  //AC setup
-  	ADCSRB |= (1 << ACME); //Positive input
+  // AC setup
+  ADCSRB |= (1 << ACME); // Positive input
   // ADC setup
-  ADMUX |=  (1 << MUX4)| (1 << MUX3) | (0 << MUX2) | (1 << MUX1) | (1 << MUX0); // A6 gain x20
-
+  ADMUX |= (1 << MUX4) | (1 << MUX3) | (0 << MUX2) | (1 << MUX1) | (1 << MUX0); // A6 gain x20
 }
 
 uint16_t MIC_read (void) { return ACO; }
@@ -126,20 +127,19 @@ void BUT_init ( ) {
   PCMSK1 |= (1 << PCINT9);
 }
 
-bool tryk = 0;
-ISR (PCINT1_vect) { tryk = (BUT & (1 << PIN_BUT)) != 0; }
-void TEMP_init(void){
-	  ADMUX &= ~((0 << REFS1) & (1 << REFS0));				// Use 1.1V AREF
-	  ADMUX |= (1 << MUX3)| (0 << MUX2) | (1 << MUX1) | (1 << MUX0); // Temp sensor
-	  ADMUX |= (0 << ADLAR);								// Right adjust result
-	  ADCSRA |= (0 << ADPS2) | (0 << ADPS1) | (0 << ADPS0); // Prescale 2
-	  ADCSRA |= (1 << ADEN) | (1 << ADATE) | (1 << ADIE);   // Enable, trigger and
-	  // interrupt
-	  ADCSRA |= (1 << ADSC);								// Start ADC
-	  
+void TEMP_init (void) {
+  ADMUX &= ~((0 << REFS1) & (1 << REFS0)); // Use 1.1V AREF
+  ADMUX |= (1 << MUX3) | (0 << MUX2) | (1 << MUX1) | (1 << MUX0); // Temp sensor
+  ADMUX |= (0 << ADLAR);								// Right adjust result
+  ADCSRA |= (0 << ADPS2) | (0 << ADPS1) | (0 << ADPS0); // Prescale 2
+  ADCSRA |= (1 << ADEN) | (1 << ADATE) | (1 << ADIE);   // Enable, trigger and
+  // interrupt
+  ADCSRA |= (1 << ADSC); // Start ADC
 }
- float TEMP_read(void) {
-	 float k = 1.0, offset = -272.9,
-	T = k * ((ADCH << 8) | ADCL) + offset;
-	 return T;
- }
+
+float TEMP_read (void) {
+  float k = 1.0, offset = -272.9, T = k * ((ADCH << 8) | ADCL) + offset;
+  return T;
+}
+
+// ISR (PCINT1_vect) { btn = (BUT & (1 << PIN_BUT)) != 0; }

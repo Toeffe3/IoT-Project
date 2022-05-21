@@ -16,16 +16,17 @@
 #include <avr/interrupt.h>
 #include <avr/io.h>
 #include <stdbool.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 #include <util/delay.h>
-//
+
+// Custom functions
 #include "LED.h"
 #include "Output.h"
 #include "com.h"
+#include "power.h"
 #include "sensor.h"
-#include "ticks.h"
-
 #define STRCMP(s) ((s[0] - 'A') + (s[1] - 'A') * 26 + (s[2] - 'A') * 260)
 
 #endif /* HEADER_H_ */

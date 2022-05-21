@@ -1,48 +1,65 @@
-/*
- * Device.cpp
- *
  */
 #include "src/header.h"
 
+// Select which sensor the processor should be used for
 #define SENSOR_LDR "LDR"
 //#define SENSOR_IRD "IRD"
 //#define SENSOR_CNY "CNY"
 
 int main (void) {
 
-  char	str[4];
-  uint8_t mode = 0;
+#ifdef SENSOR_LDR
+#define USING_ADC
+#define USING_ADC
+#endif
+
+#include "src/header.h"
+
+int main (void) {
 
   // Setup
-  com_init ( );
-  LED_init ( );
+  uint8_t power_down_modules = PWR_USI | PWR_LIN | PWR_TI0;
 
-  _delay_ms (COM_SPEED * 10);
+#ifndef USING_DELAY
+  power_down_modules |= PWR_TI1;
+#endif
+#ifndef USING_ADC
+  power_down_modules |= PWR_ADC;
+#endif
+
+  power_init (			   // Minimize power usage
+	  POWER_HIGH,		   // Decides which clocks keeps running
+	  false,			   // Do not Disable Brown out detection
+	  power_down_modules); // Modules that should be turned off
+
+  LED_init ( );
+  LDR_init ( );
+  com_init ( );
 
 #ifdef SENSOR_LDR
   LDR_init ( );
-  com_send_string (SENSOR_LDR);
+  char str[4] = SENSOR_LDR;
 #endif
 #ifdef SENSOR_IRD
   IRD_init ( );
-  com_send_string (SENSOR_IRD);
+  char str[4] = SENSOR_IRD;
 #endif
 #ifdef SENSOR_CNY
   CNY_init ( );
-  com_send_string (SENSOR_CNY);
+  char str[4] = SENSOR_CNY;
 #endif
+  com_send_string (str);
+
+  _delay_ms (COM_SPEED * 10);
 
   // Loop
   while (1) {
 
 	com_wait_for_signal ( );
-	LED_on ( );
 	com_get_string (str);
-
-	LED_off ( );
-	_delay_ms (COM_SPEED * 10);
-
 	if (STRCMP (str) == STRCMP ("REQ")) {
+
+	  _delay_ms (COM_SPEED * 10);
 
 #ifdef SENSOR_LDR
 	  uint16_t data = LDR_read ( );
@@ -61,9 +78,10 @@ int main (void) {
 	  com_send_num (data);
 #endif
 
-	} else // Echo unknown commands
-	  com_send_string (str);
-
+	} else {
+	  // Echo unknown commands
+	  com_send_string ("UC");
+	}
 	_delay_ms (COM_SPEED * 10);
   }
 }

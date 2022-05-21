@@ -10,8 +10,13 @@
 bool signal_flag = false;
 
 void com_init ( ) {
-  DDR_COM &= ~(1 << PIN_COM_0);
-  DDR_COM &= ~(1 << PIN_COM_1);
+  PORT_COM &= ~(1 << PIN_COM_0);
+  PORT_COM &= ~(1 << PIN_COM_1);
+
+  // Enable interupts on COM protocol to allow for sleep inbetween requests
+  /* CANNOT GET IT WAKE UP PROPERLY (MAYBE TO SLOW?) */
+  // PCICR |= (1 << PCIE1);
+  // PCMSK1 |= (1 << PIN_COM_1) | (1 << PIN_COM_0);
 }
 
 void com_send_signal (void) {
