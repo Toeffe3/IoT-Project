@@ -17,6 +17,7 @@
 #include <avr/io.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <string.h>
 #include <util/delay.h>
 //
 #include "LED.h"
@@ -24,5 +25,7 @@
 #include "com.h"
 #include "sensor.h"
 #include "ticks.h"
+
+#define STRCMP(s) ((s[0] - 'A') + (s[1] - 'A') * 26 + (s[2] - 'A') * 260)
 
 #endif /* HEADER_H_ */

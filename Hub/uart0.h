@@ -30,7 +30,6 @@
 #define RX			0b00000001
 #define TX			0b00000010
 
-
 void uart0_init(uint32_t baud_rate, uint8_t databits, uint8_t stopbits, char parity);
 uint32_t uart0_lcrh_databits(uint8_t databits);
 uint32_t uart0_lcrh_stopbits(uint8_t stopbits);
@@ -47,6 +46,7 @@ void uart0_println(const char* str);
 void uart0_printnum(const uint8_t);
 void uart0_printnum16(const uint16_t);
 
+void uart_init(void);
 void uart_task(void*);
 
 #endif /* UART0_H_ */
