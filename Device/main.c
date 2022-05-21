@@ -1,15 +1,14 @@
- */
-#include "src/header.h"
-
 // Select which sensor the processor should be used for
 #define SENSOR_LDR "LDR"
 //#define SENSOR_IRD "IRD"
 //#define SENSOR_CNY "CNY"
 
-int main (void) {
+#define USING_DELAY // Use delay ms requires timer 1
 
 #ifdef SENSOR_LDR
 #define USING_ADC
+#endif
+#ifdef SENSOR_CNY
 #define USING_ADC
 #endif
 
