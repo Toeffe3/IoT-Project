@@ -619,20 +619,21 @@ static char* prvWriteNameToBuffer (char* pcBuffer, const char* pcTaskName) PRIVI
  * dynamically to fill in the structure's members.
  */
 static void
-prvInitialiseNewTask (TaskFunction_t pxTaskCode, const char* const pcName, /*lint
-																			  !e971
-																			  Unqualified
-																			  char
-																			  types
-																			  are
-																			  allowed
-																			  for
-																			  strings
-																			  and
-																			  single
-																			  characters
-																			  only.
-																			*/
+prvInitialiseNewTask (TaskFunction_t	pxTaskCode,
+					  const char* const pcName, /*lint
+												   !e971
+												   Unqualified
+												   char
+												   types
+												   are
+												   allowed
+												   for
+												   strings
+												   and
+												   single
+												   characters
+												   only.
+												 */
 					  const uint32_t ulStackDepth, void* const pvParameters,
 					  UBaseType_t uxPriority, TaskHandle_t* const pxCreatedTask,
 					  TCB_t* pxNewTCB, const MemoryRegion_t* const xRegions) PRIVILEGED_FUNCTION;
@@ -926,20 +927,21 @@ xTaskCreate (TaskFunction_t pxTaskCode, const char* const pcName, /*lint !e971
 /*-----------------------------------------------------------*/
 
 static void
-prvInitialiseNewTask (TaskFunction_t pxTaskCode, const char* const pcName, /*lint
-																			  !e971
-																			  Unqualified
-																			  char
-																			  types
-																			  are
-																			  allowed
-																			  for
-																			  strings
-																			  and
-																			  single
-																			  characters
-																			  only.
-																			*/
+prvInitialiseNewTask (TaskFunction_t	pxTaskCode,
+					  const char* const pcName, /*lint
+												   !e971
+												   Unqualified
+												   char
+												   types
+												   are
+												   allowed
+												   for
+												   strings
+												   and
+												   single
+												   characters
+												   only.
+												 */
 					  const uint32_t ulStackDepth, void* const pvParameters,
 					  UBaseType_t uxPriority, TaskHandle_t* const pxCreatedTask,
 					  TCB_t* pxNewTCB, const MemoryRegion_t* const xRegions) {
@@ -974,33 +976,33 @@ prvInitialiseNewTask (TaskFunction_t pxTaskCode, const char* const pcName, /*lin
 #if (portSTACK_GROWTH < 0)
   {
 	pxTopOfStack = &(pxNewTCB->pxStack[ulStackDepth - (uint32_t)1]);
-	pxTopOfStack = (StackType_t*)(((portPOINTER_SIZE_TYPE)pxTopOfStack) &
-								  (~((portPOINTER_SIZE_TYPE)
-										 portBYTE_ALIGNMENT_MASK))); /*lint
-																		!e923
-																		!e9033
-																		!e9078
-																		MISRA
-																		exception.
-																		Avoiding
-																		casts
-																		between
-																		pointers
-																		and
-																		integers
-																		is not
-																		practical.
-																		Size
-																		differences
-																		accounted
-																		for
-																		using
-																		portPOINTER_SIZE_TYPE
-																		type.
-																		Checked
-																		by
-																		assert().
-																	  */
+	pxTopOfStack =
+		(StackType_t*)(((portPOINTER_SIZE_TYPE)pxTopOfStack) &
+					   (~((portPOINTER_SIZE_TYPE)portBYTE_ALIGNMENT_MASK))); /*lint
+																				!e923
+																				!e9033
+																				!e9078
+																				MISRA
+																				exception.
+																				Avoiding
+																				casts
+																				between
+																				pointers
+																				and
+																				integers
+																				is not
+																				practical.
+																				Size
+																				differences
+																				accounted
+																				for
+																				using
+																				portPOINTER_SIZE_TYPE
+																				type.
+																				Checked
+																				by
+																				assert().
+																			  */
 
 	/* Check the alignment of the calculated top of stack is correct. */
 	configASSERT ((((portPOINTER_SIZE_TYPE)pxTopOfStack &
@@ -2001,32 +2003,32 @@ void vTaskStartScheduler (void) {
 	 * address of the RAM then create the idle task. */
 	vApplicationGetIdleTaskMemory (&pxIdleTaskTCBBuffer, &pxIdleTaskStackBuffer,
 								   &ulIdleTaskStackSize);
-	xIdleTaskHandle =
-		xTaskCreateStatic (prvIdleTask, configIDLE_TASK_NAME,
-						   ulIdleTaskStackSize, (void*)NULL, /*lint !e961.  The
-																cast is not
-																redundant for
-																all compilers.
-															  */
-						   portPRIVILEGE_BIT, /* In effect ( tskIDLE_PRIORITY |
-												 portPRIVILEGE_BIT ), but
-												 tskIDLE_PRIORITY is zero. */
-						   pxIdleTaskStackBuffer, pxIdleTaskTCBBuffer); /*lint
-																		   !e961
-																		   MISRA
-																		   exception,
-																		   justified
-																		   as it
-																		   is
-																		   not a
-																		   redundant
-																		   explicit
-																		   cast
-																		   to
-																		   all
-																		   supported
-																		   compilers.
-																		 */
+	xIdleTaskHandle = xTaskCreateStatic (
+		prvIdleTask, configIDLE_TASK_NAME, ulIdleTaskStackSize,
+		(void*)NULL,	   /*lint !e961.  The
+							  cast is not
+							  redundant for
+							  all compilers.
+							*/
+		portPRIVILEGE_BIT, /* In effect ( tskIDLE_PRIORITY |
+							  portPRIVILEGE_BIT ), but
+							  tskIDLE_PRIORITY is zero. */
+		pxIdleTaskStackBuffer, pxIdleTaskTCBBuffer); /*lint
+														!e961
+														MISRA
+														exception,
+														justified
+														as it
+														is
+														not a
+														redundant
+														explicit
+														cast
+														to
+														all
+														supported
+														compilers.
+													  */
 
 	if (xIdleTaskHandle != NULL) {
 	  xReturn = pdPASS;
@@ -4601,34 +4603,35 @@ void vTaskGetRunTimeStats (char* pcWriteBuffer) {
 		  {
 			/* sizeof( int ) == sizeof( long ) so a smaller
 			 * printf() library can be used. */
-			sprintf (pcWriteBuffer, "\t%u\t\t<1%%\r\n",
-					 (unsigned int)pxTaskStatusArray[x].ulRunTimeCounter); /*lint
-																			  !e586
-																			  sprintf()
-																			  allowed
-																			  as
-																			  this
-																			  is
-																			  compiled
-																			  with
-																			  many
-																			  compilers
-																			  and
-																			  this
-																			  is
-																			  a
-																			  utility
-																			  function
-																			  only
-																			  -
-																			  not
-																			  part
-																			  of
-																			  the
-																			  core
-																			  kernel
-																			  implementation.
-																			*/
+			sprintf (
+				pcWriteBuffer, "\t%u\t\t<1%%\r\n",
+				(unsigned int)pxTaskStatusArray[x].ulRunTimeCounter); /*lint
+																		 !e586
+																		 sprintf()
+																		 allowed
+																		 as
+																		 this
+																		 is
+																		 compiled
+																		 with
+																		 many
+																		 compilers
+																		 and
+																		 this
+																		 is
+																		 a
+																		 utility
+																		 function
+																		 only
+																		 -
+																		 not
+																		 part
+																		 of
+																		 the
+																		 core
+																		 kernel
+																		 implementation.
+																	   */
 		  }
 #endif
 		}

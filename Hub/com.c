@@ -149,11 +149,11 @@ uint8_t				 device_type = SENSOR_UNKNOWN;
 void com_task (void* pvParameters) {
   com_init ( );
 
-	uint8_t com_mode = COM_IDLE;
-	com_in = xStreamBufferGenericCreate(32, 1, pdFALSE);
-	com_out = xStreamBufferGenericCreate(32, 1, pdFALSE);
-	size_t len = 0;
-	char str [32];
+  uint8_t com_mode = COM_IDLE;
+  com_in		   = xStreamBufferGenericCreate (32, 1, pdFALSE);
+  com_out		   = xStreamBufferGenericCreate (32, 1, pdFALSE);
+  size_t len	   = 0;
+  char	 str[32];
 
   while (1) {
 	char data[32];
@@ -175,29 +175,29 @@ void com_task (void* pvParameters) {
 		while (len-- > 0)
 		  str[len] = '\0';
 
-				com_mode = COM_WAIT_FOR_RESPONSE;
-				break;
-			}
-			case COM_WAIT_FOR_RESPONSE: {
-				com_wait_for_signal();
-				uart0_print("COM_READ: ");
-				char tmp [32] = { '\0' };
-				len = com_get_string(tmp);
-				uart0_println(tmp);
-				xStreamBufferReset(com_in);
-				xStreamBufferSend(com_in, &tmp, len, 250);
-				vTaskDelay(COM_SPEED * 10 / portTICK_RATE_MS);
-				com_mode = COM_IDLE;
-				len = 0;
-				break;
-			}
+		com_mode = COM_WAIT_FOR_RESPONSE;
+		break;
+	  }
+	  case COM_WAIT_FOR_RESPONSE: {
+		com_wait_for_signal ( );
+		uart0_print ("COM_READ: ");
+		char tmp[32] = {'\0'};
+		len			 = com_get_string (tmp);
+		uart0_println (tmp);
+		xStreamBufferReset (com_in);
+		xStreamBufferSend (com_in, &tmp, len, 250);
+		vTaskDelay (COM_SPEED * 10 / portTICK_RATE_MS);
+		com_mode = COM_IDLE;
+		len		 = 0;
+		break;
+	  }
 
 		if (device_type != SENSOR_UNKNOWN) {
 		  com_mode = COM_IDLE;
 		}
 		break;
-	  }
 	}
-	vTaskDelay (1 / portTICK_RATE_MS);
   }
+  vTaskDelay (1 / portTICK_RATE_MS);
+}
 }

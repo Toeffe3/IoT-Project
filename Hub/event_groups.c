@@ -477,34 +477,35 @@ BaseType_t xEventGroupClearBitsFromISR (EventGroupHandle_t xEventGroup,
   BaseType_t xReturn;
 
   traceEVENT_GROUP_CLEAR_BITS_FROM_ISR (xEventGroup, uxBitsToClear);
-  xReturn = xTimerPendFunctionCallFromISR (vEventGroupClearBitsCallback, (void*)xEventGroup,
-										   (uint32_t)uxBitsToClear, NULL); /*lint
-																			  !e9087
-																			  Can't
-																			  avoid
-																			  cast
-																			  to
-																			  void*
-																			  as
-																			  a
-																			  generic
-																			  callback
-																			  function
-																			  not
-																			  specific
-																			  to
-																			  this
-																			  use
-																			  case.
-																			  Callback
-																			  casts
-																			  back
-																			  to
-																			  original
-																			  type
-																			  so
-																			  safe.
-																			*/
+  xReturn =
+	  xTimerPendFunctionCallFromISR (vEventGroupClearBitsCallback, (void*)xEventGroup,
+									 (uint32_t)uxBitsToClear, NULL); /*lint
+																		!e9087
+																		Can't
+																		avoid
+																		cast
+																		to
+																		void*
+																		as
+																		a
+																		generic
+																		callback
+																		function
+																		not
+																		specific
+																		to
+																		this
+																		use
+																		case.
+																		Callback
+																		casts
+																		back
+																		to
+																		original
+																		type
+																		so
+																		safe.
+																	  */
 
   return xReturn;
 }
@@ -791,29 +792,30 @@ UBaseType_t uxEventGroupGetNumber (void* xEventGroup) {
 #if (configUSE_TRACE_FACILITY == 1)
 
 void vEventGroupSetNumber (void* xEventGroup, UBaseType_t uxEventGroupNumber) {
-  ((EventGroup_t*)xEventGroup)->uxEventGroupNumber = uxEventGroupNumber; /*lint
-																			!e9087
-																			!e9079
-																			EventGroupHandle_t
-																			is a
-																			pointer
-																			to
-																			an
-																			EventGroup_t,
-																			but
-																			EventGroupHandle_t
-																			is
-																			kept
-																			opaque
-																			outside
-																			of
-																			this
-																			file
-																			for
-																			data
-																			hiding
-																			purposes.
-																		  */
+  ((EventGroup_t*)xEventGroup)->uxEventGroupNumber =
+	  uxEventGroupNumber; /*lint
+							 !e9087
+							 !e9079
+							 EventGroupHandle_t
+							 is a
+							 pointer
+							 to
+							 an
+							 EventGroup_t,
+							 but
+							 EventGroupHandle_t
+							 is
+							 kept
+							 opaque
+							 outside
+							 of
+							 this
+							 file
+							 for
+							 data
+							 hiding
+							 purposes.
+						   */
 }
 
 #endif /* configUSE_TRACE_FACILITY */
