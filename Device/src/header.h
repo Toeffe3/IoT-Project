@@ -13,16 +13,20 @@
 #define ESP32 PORTB
 #define F_CPU 1000000
 
+// Standard libraries
 #include <avr/interrupt.h>
 #include <avr/io.h>
 #include <stdbool.h>
+#include <stdint.h>
 #include <stdlib.h>
+#include <string.h>
 #include <util/delay.h>
-//
+
+// Custom functions
 #include "LED.h"
 #include "Output.h"
 #include "com.h"
+#include "power.h"
 #include "sensor.h"
-#include "ticks.h"
 
 #endif /* HEADER_H_ */

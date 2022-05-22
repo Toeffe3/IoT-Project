@@ -9,6 +9,7 @@
 #define SENSOR_H_
 
 #include "header.h"
+#include <stdbool.h>
 
 #define DHT_TIMEOUT 1000
 
@@ -47,7 +48,8 @@
 #define DDR_BUT DDRB
 #define PIN_BUT PINB1
 #define BUT PINB
-extern bool tryk;
+
+extern bool btn;
 
 void	 IRD_init (void);
 bool	 IRD_read (void);
@@ -63,6 +65,6 @@ uint16_t MIC_read (void);
 void	 CNY_init (void);
 uint16_t CNY_read (void);
 void	 BUT_init ( );
-void TEMP_init(void);
-float TEMP_read(void);
+void	 TEMP_init (void);
+float	TEMP_read (void);
 #endif /* SENSOR_H_ */

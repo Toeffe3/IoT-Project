@@ -10,8 +10,13 @@
 bool signal_flag = false;
 
 void com_init ( ) {
-  DDR_COM &= ~(1 << PIN_COM_0);
-  DDR_COM &= ~(1 << PIN_COM_1);
+  PORT_COM &= ~(1 << PIN_COM_0);
+  PORT_COM &= ~(1 << PIN_COM_1);
+
+  // Enable interupts on COM protocol to allow for sleep inbetween requests
+  /* CANNOT GET IT WAKE UP PROPERLY (MAYBE TO SLOW?) */
+  // PCICR |= (1 << PCIE1);
+  // PCMSK1 |= (1 << PIN_COM_1) | (1 << PIN_COM_0);
 }
 
 void com_send_signal (void) {
@@ -35,15 +40,15 @@ void com_send_signal (void) {
 }
 
 uint8_t com_get_data (void) {
-  switch (PORT_COM & ((1 << PIN_COM_1) | (1 << PIN_COM_0))) {
+  switch (COM & ((1 << PIN_COM_1) | (1 << PIN_COM_0))) {
 	case ((1 << PIN_COM_0) | (1 << PIN_COM_1)):
 	  return COM_SIGNAL;
 	case (1 << PIN_COM_0):
 	  return COM_ZERO;
-	case PIN_COM_1:
-	  return (1 << COM_ONE);
+	case (1 << PIN_COM_1):
+	  return COM_ONE;
 	default:
-	  return (1 << COM_FLAT);
+	  return COM_FLAT;
   }
 }
 
@@ -65,8 +70,6 @@ void com_wait_for_signal (void) {
 void com_get_string (char* str) {
   uint8_t i = 8;
 
-  com_wait_for_signal ( );
-
   while (true) {
 	uint8_t next = com_wait_for_next ( );
 
@@ -77,16 +80,17 @@ void com_get_string (char* str) {
 
 	switch (next) {
 	  case COM_ZERO:
-		_delay_ms (7);
+		_delay_ms (COM_SPEED / 4);
 		i--;
 		*str &= ~(1 << i);
 		break;
 	  case COM_ONE:
-		_delay_ms (7);
+		_delay_ms (COM_SPEED / 4);
 		i--;
 		*str |= (1 << i);
 		break;
 	  case COM_SIGNAL:
+		_delay_ms (COM_SPEED * 2);
 		return;
 	}
   }
@@ -127,12 +131,9 @@ void private_com_send_string (const char* str, bool passthrough) {
 	com_send_signal ( );
 }
 
+char buff[10];
 // Shorthands
 void com_send_bit (bool b) { private_com_send_bit (b, false); }
 void com_send_char (char c) { private_com_send_char (c, false); }
 void com_send_string (const char* str) { private_com_send_string (str, false); }
-void com_send_num (uint16_t num) {
-  char str[10];
-  utoa(num, str, 10);
-  com_send_string (str);
-}
+void com_send_num (uint16_t num) { com_send_string (utoa (num, buff, 10)); }

@@ -13,9 +13,11 @@
  * Modified by:
  * Victor
  */
-#include "uart0.h"
 #include "FreeRTOS.h"
+//
 #include "task.h"
+//
+#include "uart0.h"
 
 void uart0_init (uint32_t baud_rate, uint8_t databits, uint8_t stopbits, char parity) {
   uint32_t BRD;
@@ -164,25 +166,8 @@ void uart0_printnum16 (const uint16_t num) {
   uart0_put ((num % 10) + '0');
 }
 
-void uart_task (void*);
-
 void uart_init (void) {
   uart0_init (19200, 8, 1, 'n');
   uart0_println ("");
   uart0_println ("UART Startup Done");
 }
-
-void uart_task (void* pvParameters) {
-
-  uart_init ( );
-
-  while (1) {
-	// Main code
-	// uart0_println("Test123Test123");
-
-	// Delay between exe
-	vTaskDelay (10000 / portTICK_RATE_MS);
-  }
-}
-
-/****************************** End Of Module *******************************/

@@ -168,16 +168,16 @@
     <Compile Include="src\Output.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\power.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\power.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\sensor.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\sensor.h">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\ticks.c">
-      <SubType>compile</SubType>
-    </Compile>
-    <Compile Include="src\ticks.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="main.c">
