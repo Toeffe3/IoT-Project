@@ -12,18 +12,21 @@
 #define USING_ADC
 #endif
 
+#define MODE_LDR 1
+#define MODE_IRD 2
+#define MODE_CNY 3
+#define MODE_MIC 4
+
 #include "src/header.h"
 
 int main (void) {
 
   // Setup
+  uint8_t mode				 = 0;
   uint8_t power_down_modules = PWR_USI | PWR_LIN | PWR_TI0;
 
 #ifndef USING_DELAY
   power_down_modules |= PWR_TI1;
-#endif
-#ifndef USING_ADC
-  power_down_modules |= PWR_ADC;
 #endif
 
   power_init (			   // Minimize power usage
@@ -32,55 +35,70 @@ int main (void) {
 	  power_down_modules); // Modules that should be turned off
 
   LED_init ( );
-  LDR_init ( );
   com_init ( );
-
-#ifdef SENSOR_LDR
-  LDR_init ( );
-  char str[4] = SENSOR_LDR;
-#endif
-#ifdef SENSOR_IRD
-  IRD_init ( );
-  char str[4] = SENSOR_IRD;
-#endif
-#ifdef SENSOR_CNY
-  CNY_init ( );
-  char str[4] = SENSOR_CNY;
-#endif
-  com_send_string (str);
 
   _delay_ms (COM_SPEED * 10);
 
   // Loop
   while (1) {
 
+	char str[4] = {'\0'};
 	com_wait_for_signal ( );
 	com_get_string (str);
-	if (STRCMP (str) == STRCMP ("REQ")) {
 
+	_delay_ms (COM_SPEED * 10);
+
+	if (strncmp (str, "REQ", 2) == 0) {
+
+	  LED_on ( );
 	  _delay_ms (COM_SPEED * 10);
 
-#ifdef SENSOR_LDR
-	  uint16_t data = LDR_read ( );
-	  com_send_num (data);
-#endif
+	  switch (mode) {
+		case MODE_LDR:
+		  com_send_num (LDR_read ( ));
+		  break;
 
-#ifdef SENSOR_IRD
-	  if (IRD_read ( ))
-		com_send_string ("Detected!");
-	  else
-		com_send_string ("No movement!");
-#endif
+		case MODE_IRD:
+		  if (IRD_read ( ))
+			com_send_string ("1");
+		  else
+			com_send_string ("0");
+		  break;
 
-#ifdef SENSOR_IRD
-	  uint16_t data = CNY_read ( );
-	  com_send_num (data);
-#endif
+		case MODE_CNY:
+		  com_send_num (CNY_read ( ));
+		  break;
 
+		case MODE_MIC:
+		  com_send_num (MIC_read ( ));
+		  break;
+
+		default:
+		  com_send_string ("UD!"); // Unknown device
+	  }							   // END SWITCH MODE
+	  LED_off ( );
+	} else if (strncmp (str, "LDR", 2) == 0) {
+	  LDR_init ( );
+	  mode = MODE_LDR;
+	  com_send_string ("OK!");
+	} else if (strncmp (str, "IRD", 2) == 0) {
+
+	  IRD_init ( );
+	  mode = MODE_IRD;
+	  com_send_string ("OK!");
+	} else if (strncmp (str, "CNY", 2) == 0) {
+
+	  CNY_init ( );
+	  mode = MODE_CNY;
+	  com_send_string ("OK!");
+	} else if (strncmp (str, "MIC", 2) == 0) {
+	  MIC_init ( );
+	  mode = MODE_MIC;
+	  com_send_string ("OK!");
 	} else {
-	  // Echo unknown commands
-	  com_send_string ("UC");
+	  com_send_string (str); // Unknown command
 	}
+
 	_delay_ms (COM_SPEED * 10);
   }
 }

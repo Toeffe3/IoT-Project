@@ -131,7 +131,7 @@ uint8_t device_type = SENSOR_UNKNOWN;
 void com_task(void* pvParameters) {
 	com_init();
 
-	uint8_t com_mode = COM_SETUP;
+	uint8_t com_mode = COM_IDLE;
 	com_in = xStreamBufferGenericCreate(32, 1, pdFALSE);
 	com_out = xStreamBufferGenericCreate(32, 1, pdFALSE);
 	size_t len = 0;
@@ -169,22 +169,6 @@ void com_task(void* pvParameters) {
 				vTaskDelay(COM_SPEED * 10 / portTICK_RATE_MS);
 				com_mode = COM_IDLE;
 				len = 0;
-				break;
-			}
-			case COM_SETUP: {
-				uart0_println("COM_SETUP");
-				com_wait_for_signal();
-				char tmp [4] = { '\0' };
-				com_get_string(tmp);
-				uart0_println(tmp);
-
-				if ( strncmp(tmp, "LDR", 3) == 0 ) device_type = SENSOR_LDR;
-				else if ( strncmp(tmp, "IRD", 3) == 0 ) device_type = SENSOR_IRD;
-				else if ( strncmp(tmp, "CNY", 3) == 0 ) device_type = SENSOR_CNY;
-
-				if ( device_type != SENSOR_UNKNOWN ) {
-					com_mode = COM_IDLE;
-				}
 				break;
 			}
 

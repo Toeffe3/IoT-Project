@@ -56,6 +56,11 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
+			<name>HUB</name>
+			<type>2</type>
+			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB</locationURI>
+		</link>
+		<link>
 			<name>com.c</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/com.c</locationURI>
@@ -241,11 +246,6 @@
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/HUB.map</locationURI>
 		</link>
 		<link>
-			<name>Debug/HUB.out</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/HUB.out</locationURI>
-		</link>
-		<link>
 			<name>Debug/HUB_linkInfo.xml</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/HUB_linkInfo.xml</locationURI>
@@ -271,19 +271,9 @@
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/com.d</locationURI>
 		</link>
 		<link>
-			<name>Debug/com.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/com.obj</locationURI>
-		</link>
-		<link>
 			<name>Debug/croutine.d</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/croutine.d</locationURI>
-		</link>
-		<link>
-			<name>Debug/croutine.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/croutine.obj</locationURI>
 		</link>
 		<link>
 			<name>Debug/driverlib</name>
@@ -296,19 +286,9 @@
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/event_groups.d</locationURI>
 		</link>
 		<link>
-			<name>Debug/event_groups.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/event_groups.obj</locationURI>
-		</link>
-		<link>
 			<name>Debug/heap_2.d</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/heap_2.d</locationURI>
-		</link>
-		<link>
-			<name>Debug/heap_2.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/heap_2.obj</locationURI>
 		</link>
 		<link>
 			<name>Debug/i2c.d</name>
@@ -316,19 +296,9 @@
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/i2c.d</locationURI>
 		</link>
 		<link>
-			<name>Debug/i2c.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/i2c.obj</locationURI>
-		</link>
-		<link>
 			<name>Debug/lcd.d</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/lcd.d</locationURI>
-		</link>
-		<link>
-			<name>Debug/lcd.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/lcd.obj</locationURI>
 		</link>
 		<link>
 			<name>Debug/list.d</name>
@@ -336,19 +306,9 @@
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/list.d</locationURI>
 		</link>
 		<link>
-			<name>Debug/list.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/list.obj</locationURI>
-		</link>
-		<link>
 			<name>Debug/main.d</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/main.d</locationURI>
-		</link>
-		<link>
-			<name>Debug/main.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/main.obj</locationURI>
 		</link>
 		<link>
 			<name>Debug/makefile</name>
@@ -366,24 +326,9 @@
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/port.d</locationURI>
 		</link>
 		<link>
-			<name>Debug/port.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/port.obj</locationURI>
-		</link>
-		<link>
-			<name>Debug/portasm.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/portasm.obj</locationURI>
-		</link>
-		<link>
 			<name>Debug/queue.d</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/queue.d</locationURI>
-		</link>
-		<link>
-			<name>Debug/queue.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/queue.obj</locationURI>
 		</link>
 		<link>
 			<name>Debug/sources.mk</name>
@@ -396,29 +341,14 @@
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/startup_frt.d</locationURI>
 		</link>
 		<link>
-			<name>Debug/startup_frt.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/startup_frt.obj</locationURI>
-		</link>
-		<link>
 			<name>Debug/status_led.d</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/status_led.d</locationURI>
 		</link>
 		<link>
-			<name>Debug/status_led.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/status_led.obj</locationURI>
-		</link>
-		<link>
 			<name>Debug/stream_buffer.d</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/stream_buffer.d</locationURI>
-		</link>
-		<link>
-			<name>Debug/stream_buffer.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/stream_buffer.obj</locationURI>
 		</link>
 		<link>
 			<name>Debug/subdir_rules.mk</name>
@@ -436,19 +366,9 @@
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/systick_frt.d</locationURI>
 		</link>
 		<link>
-			<name>Debug/systick_frt.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/systick_frt.obj</locationURI>
-		</link>
-		<link>
 			<name>Debug/tasks.d</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/tasks.d</locationURI>
-		</link>
-		<link>
-			<name>Debug/tasks.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/tasks.obj</locationURI>
 		</link>
 		<link>
 			<name>Debug/timers.d</name>
@@ -456,19 +376,9 @@
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/timers.d</locationURI>
 		</link>
 		<link>
-			<name>Debug/timers.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/timers.obj</locationURI>
-		</link>
-		<link>
 			<name>Debug/uart0.d</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/uart0.d</locationURI>
-		</link>
-		<link>
-			<name>Debug/uart0.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/uart0.obj</locationURI>
 		</link>
 		<link>
 			<name>Debug/utils</name>
@@ -636,19 +546,9 @@
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/driverlib/cpu.d</locationURI>
 		</link>
 		<link>
-			<name>Debug/driverlib/cpu.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/driverlib/cpu.obj</locationURI>
-		</link>
-		<link>
 			<name>Debug/driverlib/gpio.d</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/driverlib/gpio.d</locationURI>
-		</link>
-		<link>
-			<name>Debug/driverlib/gpio.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/driverlib/gpio.obj</locationURI>
 		</link>
 		<link>
 			<name>Debug/driverlib/i2c.d</name>
@@ -656,19 +556,9 @@
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/driverlib/i2c.d</locationURI>
 		</link>
 		<link>
-			<name>Debug/driverlib/i2c.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/driverlib/i2c.obj</locationURI>
-		</link>
-		<link>
 			<name>Debug/driverlib/interrupt.d</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/driverlib/interrupt.d</locationURI>
-		</link>
-		<link>
-			<name>Debug/driverlib/interrupt.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/driverlib/interrupt.obj</locationURI>
 		</link>
 		<link>
 			<name>Debug/driverlib/subdir_rules.mk</name>
@@ -686,19 +576,9 @@
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/driverlib/sysctl.d</locationURI>
 		</link>
 		<link>
-			<name>Debug/driverlib/sysctl.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/driverlib/sysctl.obj</locationURI>
-		</link>
-		<link>
 			<name>Debug/driverlib/uart.d</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/driverlib/uart.d</locationURI>
-		</link>
-		<link>
-			<name>Debug/driverlib/uart.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/driverlib/uart.obj</locationURI>
 		</link>
 		<link>
 			<name>Debug/utils/subdir_rules.mk</name>
@@ -714,11 +594,6 @@
 			<name>Debug/utils/uartstdio.d</name>
 			<type>1</type>
 			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/utils/uartstdio.d</locationURI>
-		</link>
-		<link>
-			<name>Debug/utils/uartstdio.obj</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/OneDrive/Projekter/Toeffe3/IoT-Project/HUB/Debug/utils/uartstdio.obj</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

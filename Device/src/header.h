@@ -28,6 +28,5 @@
 #include "com.h"
 #include "power.h"
 #include "sensor.h"
-#define STRCMP(s) ((s[0] - 'A') + (s[1] - 'A') * 26 + (s[2] - 'A') * 260)
 
 #endif /* HEADER_H_ */

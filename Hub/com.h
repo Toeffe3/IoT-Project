@@ -19,7 +19,6 @@
 #define COM_IDLE 0
 #define COM_WRITE 1
 #define COM_WAIT_FOR_RESPONSE 2
-#define COM_SETUP 3
 
 #define COM_SPEED 20
 
@@ -27,6 +26,7 @@
 #define SENSOR_LDR 1
 #define SENSOR_IRD 2
 #define SENSOR_CNY 3
+#define SENSOR_MIC 4
 
 extern StreamBufferHandle_t com_in;
 extern StreamBufferHandle_t com_out;
