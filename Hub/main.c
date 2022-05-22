@@ -1,17 +1,19 @@
 /**
  * main.c
  */
+#include <stdint.h>
+//
+#include "tm4c123gh6pm.h"
 #include "FreeRTOS.h"
-#include "com.h"
-#include "lcd.h"
-#include "status_led.h"
+//
 #include "stream_buffer.h"
 #include "systick_frt.h"
 #include "task.h"
-#include "tm4c123gh6pm.h"
+//
+#include "com.h"
+#include "lcd.h"
+#include "status_led.h"
 #include "uart0.h"
-#include <stdint.h>
-//#include "i2c.h"
 
 #define USERTASK_STACK_SIZE configMINIMAL_STACK_SIZE
 
@@ -27,10 +29,10 @@ bool init_mode = false;
 
 void controller_task (void* pvParameters) {
 
-  size_t   i = 0;
-  char	   data[32];
-  char	   str[32];
-  uint16_t timeout;
+	size_t i = 0;
+	char data [32];
+	char str [32];
+	uint16_t timeout;
 
   lcd_write_buffer (SCREEN_CLEAR);
   vTaskDelay (500 / portTICK_RATE_MS);
@@ -107,23 +109,21 @@ void controller_task (void* pvParameters) {
 	vTaskDelay (1000 / portTICK_RATE_MS);
 	timeout--;
   }
-  vTaskDelay (1000 / portTICK_RATE_MS);
-  timeout--;
-}
 }
 
-static void setupHardware (void) {
-  uart_init ( );
-  init_systick ( );
+
+static void setupHardware(void) {
+	uart_init();
+	init_systick();
 }
 
-int main (void) {
-  static uint8_t priority = 10;
-  setupHardware ( );
-  xTaskCreate (com_task, "COM", USERTASK_STACK_SIZE, NULL, --priority, NULL);
-  xTaskCreate (status_led_task, "LED", USERTASK_STACK_SIZE, NULL, --priority, NULL);
-  xTaskCreate (controller_task, "CONT", USERTASK_STACK_SIZE, NULL, --priority, NULL);
-  xTaskCreate (lcd_task, "LCD", USERTASK_STACK_SIZE, NULL, --priority, NULL);
-  vTaskStartScheduler ( );
-  return 0;
+int main(void) {
+	static uint8_t priority = 10;
+	setupHardware();
+	xTaskCreate(com_task, "COM", USERTASK_STACK_SIZE, NULL, --priority, NULL);
+	xTaskCreate(status_led_task, "LED", USERTASK_STACK_SIZE, NULL, --priority, NULL);
+	xTaskCreate(controller_task, "CONT", USERTASK_STACK_SIZE, NULL, --priority, NULL);
+	xTaskCreate(lcd_task, "LCD", USERTASK_STACK_SIZE, NULL, --priority, NULL);
+	vTaskStartScheduler();
+	return 0;
 }

@@ -8,9 +8,10 @@
 #ifndef UART0_H_
 #define UART0_H_
 
-#include "tm4c123gh6pm.h"
 #include <stdint.h>
 #include <stdbool.h>
+//
+#include "tm4c123gh6pm.h"
 
 #define F_CPU		8000000
 

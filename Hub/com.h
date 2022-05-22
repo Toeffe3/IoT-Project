@@ -2,9 +2,11 @@
 #define COM_H_
 
 #include <stdbool.h>
+#include <string.h>
 #include "FreeRTOS.h"
-#include "task.h"
 #include "tm4c123gh6pm.h"
+//
+#include "task.h"
 #include "stream_buffer.h"
 
 #define PIN_COM 4
