@@ -36,10 +36,10 @@
 #define LCD_CLEAR       0b00000001// Clear the display
 #define LCD_HOME        0b00000010 // Set cursor position to 0.0
 #define LCD_BUFFER_SIZE 16*2
-#define SCREEN_CLEAR    "�"
-#define SCREEN_POS      "�"
-#define SCREEN_CLEAR_CHAR '�'
-#define SCREEN_POS_CHAR '�'
+#define SCREEN_CLEAR    "\xFF"
+#define SCREEN_POS      "\xFE"
+#define SCREEN_CLEAR_CHAR '\xFF'
+#define SCREEN_POS_CHAR '\xFE'
 // Macro to convert line (y) and column (x) to lcd encoding
 #define LCD_POS(x,y)    0x80 + (x) + (64*(y))
 // Macro to convert lcd encoded pos to an column (x value)
