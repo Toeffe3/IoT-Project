@@ -1,12 +1,8 @@
-/*****************************************************************************
- * University of Southern Denmark
- * Embedded Programming (EMP)
- *
- * MODULENAME.: lcd.h
- *
- * PROJECT....: Assignment 7
- *
- *****************************************************************************/
+/******************************************************************************/
+/* Project:    Hub                                                            */
+/* File:       lcd.h                                                          */
+/* Decription: Hub LCD control header                                         */
+/******************************************************************************/
 
 #ifndef LCD_H_
 #define LCD_H_
@@ -40,10 +36,10 @@
 #define LCD_CLEAR       0b00000001// Clear the display
 #define LCD_HOME        0b00000010 // Set cursor position to 0.0
 #define LCD_BUFFER_SIZE 16*2
-#define SCREEN_CLEAR    "§"
-#define SCREEN_POS      "¤"
-#define SCREEN_CLEAR_CHAR '§'
-#define SCREEN_POS_CHAR '¤'
+#define SCREEN_CLEAR    "ï¿½"
+#define SCREEN_POS      "ï¿½"
+#define SCREEN_CLEAR_CHAR 'ï¿½'
+#define SCREEN_POS_CHAR 'ï¿½'
 // Macro to convert line (y) and column (x) to lcd encoding
 #define LCD_POS(x,y)    0x80 + (x) + (64*(y))
 // Macro to convert lcd encoded pos to an column (x value)

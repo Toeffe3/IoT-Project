@@ -1,15 +1,16 @@
-/*
- * power.h
- *
- * Created: 14-05-2022 15:31:36
- *  Author: dense
- */
+/******************************************************************************/
+/* Project:    Device                                                         */
+/* File:       src/power.h                                                    */
+/* Decription: Device power control                                           */
+/******************************************************************************/
 
 #ifndef POWER_H_
 #define POWER_H_
 
+/***************************** Include files *******************************/
 #include "header.h"
 
+/*****************************    Defines    *******************************/
 // Modules that can be powered reduced
 #define PWR_ADC 0b00000001
 #define PWR_USI 0b00000010
@@ -37,6 +38,9 @@
   } while (0);
 // clang-format on
 
+/*****************************   Variables   *******************************/
+
+/*****************************   Functions   *******************************/
 void power_init (uint8_t mode, bool bod_detection, uint8_t reduce_module);
 void power_down (void);
 

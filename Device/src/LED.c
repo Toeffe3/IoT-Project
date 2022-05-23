@@ -1,12 +1,13 @@
-/*
- * LED.c
- *
- * Created: 12-04-2022 12:44:05
- *  Author: sylle
- */
+/******************************************************************************/
+/* Project:    Device                                                         */
+/* File:       src/LED.c                                                      */
+/* Decription: Device LED control                                             */
+/******************************************************************************/
 
+/***************************** Include files *******************************/
 #include "LED.h"
 
+/*****************************   Functions   *******************************/
 void LED_on (void) { PORT_LED |= (1 << PIN_LED); }
 void LED_off (void) { PORT_LED &= ~(1 << PIN_LED); }
 void LED_toggle (void) { LED |= (1 << PIN_LED); }

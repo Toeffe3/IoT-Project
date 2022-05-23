@@ -1,6 +1,13 @@
+/******************************************************************************/
+/* Project:    Hub                                                            */
+/* File:       com.h                                                          */
+/* Decription: Hub communication header                                       */
+/******************************************************************************/
+
 #ifndef COM_H_
 #define COM_H_
 
+/***************************** Include files *******************************/
 #include <stdbool.h>
 #include <string.h>
 #include "FreeRTOS.h"
@@ -9,6 +16,7 @@
 #include "task.h"
 #include "stream_buffer.h"
 
+/*****************************    Defines    *******************************/
 #define PIN_COM 4
 #define PIN_COM_0 0b00000100 // PB2 (tiva)
 #define PIN_COM_1 0b00001000 // PB3 (tiva)
@@ -30,11 +38,13 @@
 #define SENSOR_CNY 3
 #define SENSOR_MIC 4
 
-extern StreamBufferHandle_t com_in;
-extern StreamBufferHandle_t com_out;
+/*****************************   Variables   *******************************/
+StreamBufferHandle_t com_in;
+StreamBufferHandle_t com_out;
 
-extern uint8_t device_type;
+uint8_t device_type;
 
+/*****************************   Functions   *******************************/
 void com_task(void*);
 void com_init(void);
 size_t com_write_buffer(const char* data);

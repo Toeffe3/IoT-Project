@@ -1,15 +1,16 @@
-/*
- * com.h
- *
- * Created: 18-05-2022 09:53:03
- *  Author: dense
- */
+/******************************************************************************/
+/* Project:    Device                                                         */
+/* File:       src/com.c                                                      */
+/* Decription: Device communication header                                    */
+/******************************************************************************/
 
 #ifndef COM_H_
 #define COM_H_
 
+/***************************** Include files *******************************/
 #include "header.h"
 
+/*****************************    Defines    *******************************/
 #define DDR_COM DDRB
 #define PORT_COM PORTB
 #define COM PINB
@@ -29,6 +30,9 @@
 
 #define COM_SPEED 20
 
+/*****************************   Variables   *******************************/
+
+/*****************************   Functions   *******************************/
 void	com_init ( );
 void	com_send_signal (void);
 uint8_t com_get_data (void);

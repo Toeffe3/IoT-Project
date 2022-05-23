@@ -1,18 +1,9 @@
-/*
- * University ofSoutheren Denmark
- * Embedded C Programming (ECP)
- *
- * Assignment 4 - UART
- * uart0.c
- *
- * Functions to handle UART communication
- *
- * Authors:
- * Oskar Palinko
- *
- * Modified by:
- * Victor
- */
+/******************************************************************************/
+/* Project:    Hub                                                            */
+/* File:       uart0.c                                                        */
+/* Decription: UART by Oscar Palinko (SDU) modifyed by Toeffe3                */
+/******************************************************************************/
+
 #include "FreeRTOS.h"
 //
 #include "task.h"

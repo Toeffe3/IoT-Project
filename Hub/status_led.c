@@ -1,5 +1,13 @@
+/******************************************************************************/
+/* Project:    Hub                                                            */
+/* File:       status_led.c                                                   */
+/* Decription: Hub status LED control                                         */
+/******************************************************************************/
+
+/***************************** Include files *******************************/
 #include "status_led.h"
 
+/*****************************   Functions   *******************************/
 void status_led_init (void) {
   // Enable the GPIO port that is used for the on-board LED.
   SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOD;

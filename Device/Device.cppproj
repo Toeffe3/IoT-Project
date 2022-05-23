@@ -162,10 +162,10 @@
     <Compile Include="src\LED.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Output.c">
+    <Compile Include="src\output.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\Output.h">
+    <Compile Include="src\output.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\power.c">

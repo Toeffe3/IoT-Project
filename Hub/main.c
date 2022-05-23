@@ -1,6 +1,10 @@
-/**
- * main.c
- */
+/******************************************************************************/
+/* Project:    Hub                                                            */
+/* File:       main.c                                                         */
+/* Decription: Hub main file                                                  */
+/******************************************************************************/
+
+/***************************** Include files *******************************/
 #include <stdint.h>
 //
 #include "FreeRTOS.h"
@@ -15,8 +19,10 @@
 #include "status_led.h"
 #include "uart0.h"
 
+/*****************************    Defines    *******************************/
 #define USERTASK_STACK_SIZE configMINIMAL_STACK_SIZE
 
+/*****************************   Variables   *******************************/
 //@formatter:off
 char sensor_text[5][16] = {{"Unknown sensor  "},
 						   {"Light value:    "},
@@ -27,6 +33,7 @@ char sensor_text[5][16] = {{"Unknown sensor  "},
 
 bool init_mode = false;
 
+/*****************************   Functions   *******************************/
 void controller_task (void* pvParameters) {
 
   size_t   i = 0;

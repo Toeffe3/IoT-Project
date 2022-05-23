@@ -1,12 +1,13 @@
-/*
- * power.c
- *
- * Created: 14-05-2022 15:31:25
- *  Author: dense
- */
+/******************************************************************************/
+/* Project:    Device                                                         */
+/* File:       src/power.c                                                    */
+/* Decription: Device power control                                           */
+/******************************************************************************/
 
+/***************************** Include files *******************************/
 #include "power.h"
 
+/*****************************   Functions   *******************************/
 void power_init (uint8_t mode, bool bod_detection, uint8_t reduce_module) {
 
   if (bod_detection) {

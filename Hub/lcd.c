@@ -1,5 +1,14 @@
+/******************************************************************************/
+/* Project:    Hub                                                            */
+/* File:       lcd.c                                                          */
+/* Decription: Hub LCD control                                                */
+/******************************************************************************/
+
+
+/***************************** Include files *******************************/
 #include "lcd.h"
 
+/*****************************   Functions   *******************************/
 void delay_ms (uint32_t t) { vTaskDelay (t / portTICK_RATE_MS); }
 
 // Tell the LCD that the datalines is populated

@@ -1,8 +1,17 @@
+/******************************************************************************/
+/* Project:    Hub                                                            */
+/* File:       com.c                                                          */
+/* Decription: Hub communication file                                         */
+/******************************************************************************/
+
+/***************************** Include files *******************************/
 #include "com.h"
 #include "uart0.h"
 
+/*****************************   Variables   *******************************/
 bool signal_flag = false;
 
+/*****************************   Functions   *******************************/
 void com_init (void) {
   // SYSCTL_RCGCGPIO_R |= SYSCTL_RCGCGPIO_R2;
   SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOB; // Enable the clock to the port by
@@ -141,10 +150,6 @@ size_t com_write_buffer (const char* data) {
   return xStreamBufferSend (com_out, data, strlen (data), 0);
 }
 
-StreamBufferHandle_t com_in;
-StreamBufferHandle_t com_out;
-uint8_t				 device_type = SENSOR_UNKNOWN;
-
 void com_task (void* pvParameters) {
   com_init ( );
 
@@ -153,6 +158,7 @@ void com_task (void* pvParameters) {
   com_out		   = xStreamBufferGenericCreate (32, 1, pdFALSE);
   size_t len	   = 0;
   char	 str[32];
+  device_type = SENSOR_UNKNOWN;
 
   while (1) {
 	char data[32];

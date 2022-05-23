@@ -1,24 +1,26 @@
-/*
- * CPPFile1.cpp
- *
- * Created: 30-03-2022 10:34:49
- *  Author: sylle
- */
+/******************************************************************************/
+/* Project:    Device                                                         */
+/* File:	   src/USI.c                                                      */
+/* Decription: Universal Serial Interface                                     */
+/******************************************************************************/
+
+/***************************** Include files *******************************/
 #include "header.h"
 
+/*****************************   Variables   *******************************/
+enum { USI_MASTER_ADDRESS, USI_MASTER_WRITE, USI_MASTER_READ } USI_Master_State;
+
+/*****************************   Functions   *******************************/
 void twi_init ( ) {
   PORTB |= (1 << PIN_USI_SCL); // Set SCL high
   PORTB |= (1 << PIN_USI_SDA); // Set SDA high
   DDRB |= (1 << PIN_USI_SCL);  // Set SCL as output
   DDRB &= ~(1 << PIN_USI_SDA); // Set SDA as input
 
-  USICR = (1 << USISIE) | (1 << USIWM0) | (1 << USIWM1) | (1 << USICS1); // Set
-																		 // up
-																		 // control
-																		 // register
+  USICR = (1 << USISIE) | (1 << USIWM0) // Set up control register
+        | (1 << USIWM1) | (1 << USICS1); 
   USISR = 0xF0; // clear all flags
 }
-enum { USI_MASTER_ADDRESS, USI_MASTER_WRITE, USI_MASTER_READ } USI_Master_State;
 
 char twi_transfer (char USISR_temp) {
   USISR = USISR_temp;

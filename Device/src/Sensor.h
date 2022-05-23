@@ -1,16 +1,16 @@
-/*
- * sensor.h
- *
- * Created: 11-05-2022 10:31:04
- *  Author: dense
- */
+/******************************************************************************/
+/* Project:    Device                                                         */
+/* File:       src/sensor.h                                                   */
+/* Decription: Device sensor control header                                   */
+/******************************************************************************/
 
 #ifndef SENSOR_H_
 #define SENSOR_H_
 
+/***************************** Include files *******************************/
 #include "header.h"
-#include <stdbool.h>
 
+/*****************************    Defines    *******************************/
 #define DHT_TIMEOUT 1000
 
 // Infrared movement detector
@@ -49,8 +49,10 @@
 #define PIN_BUT PINB1
 #define BUT PINB
 
+/*****************************   Variables   *******************************/
 extern bool btn;
 
+/*****************************   Functions   *******************************/
 void	 IRD_init (void);
 bool	 IRD_read (void);
 void	 LDR_init (void);

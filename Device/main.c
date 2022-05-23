@@ -1,24 +1,23 @@
-// Select which sensor the processor should be used for
-#define SENSOR_LDR "LDR"
-//#define SENSOR_IRD "IRD"
-//#define SENSOR_CNY "CNY"
+/******************************************************************************/
+/* Project:    Device                                                         */
+/* File:       main.c                                                         */
+/* Decription: Device main file                                               */
+/******************************************************************************/
 
+/***************************** Include files *******************************/
+#include "src/header.h"
+
+/*****************************    Defines    *******************************/
+// Select which if any modules should be reduced to save power
 #define USING_DELAY // Use delay ms requires timer 1
-
-#ifdef SENSOR_LDR
 #define USING_ADC
-#endif
-#ifdef SENSOR_CNY
-#define USING_ADC
-#endif
 
 #define MODE_LDR 1
 #define MODE_IRD 2
 #define MODE_CNY 3
 #define MODE_MIC 4
 
-#include "src/header.h"
-
+/*****************************   Functions   *******************************/
 int main (void) {
 
   // Setup

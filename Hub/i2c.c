@@ -1,25 +1,13 @@
-/*
- * i2c.c
- *
- *  Created on: 16. maj 2022
- *      Author: Rainbow Dash
- */
+/******************************************************************************/
+/* Project:    Hub                                                            */
+/* File:       i2c.c                                                          */
+/* Decription: Hub I2C control                                                */
+/******************************************************************************/
 
-#include "driverlib/i2c.h"
-#include "FreeRTOS.h"
-#include "driverlib/gpio.h"
-#include "driverlib/pin_map.h"
-#include "driverlib/sysctl.h"
-#include "driverlib/uart.h"
+/***************************** Include files *******************************/
 #include "i2c.h"
-#include "inc/hw_i2c.h"
-#include "inc/hw_memmap.h"
-#include "inc/hw_types.h"
-#include "task.h"
-#include "utils/uartstdio.h"
-#include <stdbool.h>
-#include <stdint.h>
 
+/*****************************   Functions   *******************************/
 void i2c_init (void) {
 #if defined(TARGET_IS_TM4C129_RA0) || defined(TARGET_IS_TM4C129_RA1) ||        \
 	defined(TARGET_IS_TM4C129_RA2)

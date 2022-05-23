@@ -1,14 +1,16 @@
-/*
- * sensor.c
- *
- * Created: 12-04-2022 09:49:24
- *  Author: sylle
- */
+/******************************************************************************/
+/* Project:    Device                                                         */
+/* File:       src/sensor.c                                                   */
+/* Decription: Device sensor control                                          */
+/******************************************************************************/
 
+/***************************** Include files *******************************/
 #include "sensor.h"
 
+/*****************************   Variables   *******************************/
 bool btn;
 
+/*****************************   Functions   *******************************/
 void IRD_init (void) {
   // Configure IR movement detector as input
   DDR_IRD = (0 << PIN_IRD);
@@ -158,4 +160,4 @@ float TEMP_read (void) {
   return (k * ADC) + offset; // calculate
 }
 
-// ISR (PCINT1_vect) { btn = (BUT & (1 << PIN_BUT)) != 0; }
+ISR (PCINT1_vect) { btn = (BUT & (1 << PIN_BUT)) != 0; }

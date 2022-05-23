@@ -1,14 +1,18 @@
-/*
- * Output.c
- *
- * Created: 12-05-2022 12:41:18
- *  Author: sylle
- */
-#include "Output.h"
+/******************************************************************************/
+/* Project:    Device                                                         */
+/* File:       src/output.c                                                   */
+/* Decription: Device output control                                          */
+/******************************************************************************/
+
+/***************************** Include files *******************************/
+#include "output.h"
+
+/*****************************   Functions   *******************************/
 void SSD_init ( ) {
   DDR_SSD &= ~PINS_SSD;
   // MCUCR &= ~(1<<PUD);
 }
+
 void SSD_write (uint8_t num) {
   switch (num) {
 	case 0x0:

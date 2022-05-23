@@ -1,14 +1,16 @@
-/*
- * Output.h
- *
- * Created: 12-05-2022 12:41:45
- *  Author: sylle
- */ 
-
+/******************************************************************************/
+/* Project:    Device                                                         */
+/* File:       src/output.h                                                   */
+/* Decription: Device output control header                                   */
+/******************************************************************************/
 
 #ifndef OUTPUT_H_
 #define OUTPUT_H_
+
+/***************************** Include files *******************************/
 #include "header.h"
+
+/*****************************    Defines    *******************************/
 #define DDR_SSD DDRA
 #define PORT_SSD PORTA
 #define SSD PINA
@@ -31,6 +33,9 @@
 #define SSD_E 0b01001111
 #define SSD_F 0b01000111
 
+/*****************************   Variables   *******************************/
+
+/*****************************   Functions   *******************************/
 void SSD_write(uint8_t num);
 
 #endif /* OUTPUT_H_ */
