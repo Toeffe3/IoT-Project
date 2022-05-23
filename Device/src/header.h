@@ -20,7 +20,7 @@
 #include <util/delay.h>
 
 // Custom functions
-#include "LED.h"
+#include "led.h"
 #include "output.h"
 #include "com.h"
 #include "power.h"

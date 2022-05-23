@@ -156,10 +156,10 @@
     <Compile Include="src\com.h">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\LED.c">
+    <Compile Include="src\led.c">
       <SubType>compile</SubType>
     </Compile>
-    <Compile Include="src\LED.h">
+    <Compile Include="src\led.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\output.c">
